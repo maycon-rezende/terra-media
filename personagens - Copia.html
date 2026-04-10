@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Personagens da Terra Média</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+  background: url('imagens/terra-media.jpg') no-repeat center top scroll;
+  background-size: cover;
+  background-attachment: scroll;
+  font-family: 'Georgia', serif;
+  color: #f0e6d2;
+  min-height: 100vh;
+}
+
+
+ main {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  max-width: 1000px;
+  margin: 60px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+}
+
+    h1 {
+      text-align: center;
+      color: #d4af37;
+      text-shadow: 2px 2px 4px #000;
+      font-size: 3em;
+      font-family: 'Cinzel', serif;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: rgba(46, 46, 46, 0.9);
+      color: #f4a460;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #444;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #d4af37;
+    }
+
+    button {
+      display: block;
+      margin: 40px auto 10px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #f4a460;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    #mensagem {
+      text-align: center;
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    .invisivel {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .visivel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header class="banner-personagens"></header>
+
+  <main>
+    <h1>🧝‍♂️ Personagens da Terra Média</h1>
+    <p>Nesta seção, você encontrará perfis detalhados dos heróis e seres da Terra Média — de hobbits corajosos a reis élficos e guerreiros anões.</p>
+
+    <div class="grid">
+      <a href="frodo.html" class="card">💍 Frodo Bolseiro</a>
+      <a href="gandalf.html" class="card">🧙‍♂️ Gandalf</a>
+      <a href="aragorn.html" class="card">⚔️ Aragorn</a>
+      <a href="legolas.html" class="card">🏹 Legolas</a>
+      <a href="gimli.html" class="card">🪓 Gimli</a>
+      <a href="galadriel.html" class="card">✨ Galadriel</a>
+      <a href="eira.html" class="card">🏹 Eira</a>
+      <a href="noada.html" class="card">⚔️ Noada</a>
+      <a href="thalion.html" class="card">🏹 Thalion</a>
+      <a href="lyra.html" class="card">✨ Lyra</a>
+    </div>
+
+    <button onclick="mostrarMensagem()">📜 Ouvir uma mensagem da Terra Média</button>
+    <p id="mensagem"></p>
+
+    <footer>
+      <p>Feito com por Noada | Inspirado no universo de Tolkien</p>
+    </footer>
+  </main>
+
+  <script>
+    function mostrarMensagem() {
+      const frases = [
+        "Nem todos os que vagueiam estão perdidos.",
+        "Até a menor das criaturas pode mudar o curso do futuro.",
+        "A esperança é a luz que nunca se apaga.",
+        "O coração de um rei é forjado na batalha.",
+        "A sabedoria dos elfos ecoa pelas eras.",
+        "A coragem dos hobbits é maior do que parece.",
+        "A amizade é o verdadeiro poder da Sociedade do Anel.",
+        "A sombra pode crescer, mas a luz sempre encontra um caminho."
+      ];
+      const sorteada = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById("mensagem").textContent = sorteada;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visivel');
+        }
+      });
+    });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('invisivel');
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

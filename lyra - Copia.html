@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lyra — Guardiã da Noite Estelar</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url('imagens/lyra.png') center center / cover no-repeat fixed;
+            background-size: cover;           
+            background-position: center;            
+            background-repeat: no-repeat;          
+            background-attachment: scroll;
+            background-color: #0f172a;
+            color: #e0e1dd;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .lyra-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            background-color: rgba(15, 23, 42, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(173, 216, 230, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #f0f0f0;
+            text-shadow: 0 0 12px #a0e0c0;
+            animation: revelarNome 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes revelarNome {
+            to {
+                opacity: 1;
+                text-shadow: 0 0 30px #b0ffc0;
+            }
+        }
+
+        .lyra-imagem {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1rem;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .frase {
+            text-align: center;
+            font-style: italic;
+            margin: 1rem 0;
+            color: #c0e0ff;
+        }
+
+        h2 {
+            color: #a9d6e5;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        p,
+        li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: '✨ ';
+            padding-left: 1.2rem;
+        }
+
+        strong {
+            color: #f4f4f4;
+        }
+
+        .mapa-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #81c784;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .voltar {
+            display: block;
+            margin: 30px auto;
+            /* centraliza horizontalmente */
+            padding: 8px 16px;
+            font-size: 1em;
+            color: #fff;
+            background: linear-gradient(90deg, #4caf50, #81c784);
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 0 6px rgba(129, 199, 132, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: fit-content;
+            /* botão se ajusta ao conteúdo */
+        }
+
+
+        .voltar:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 10px rgba(129, 199, 132, 0.5);
+        }
+
+        .carrossel {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .carrossel-imagens {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carrossel img {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .estrelas-subindo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            /* acima do fundo, abaixo do conteúdo */
+            overflow: hidden;
+        }
+
+        .estrela {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: subir 6s linear infinite, pulsar 2s ease-in-out infinite;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulsar {
+
+            0%,
+            100% {
+                filter: brightness(1);
+            }
+
+            50% {
+                filter: brightness(1.8);
+            }
+        }
+
+        .revelar {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        .revelar.visivel {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <audio autoplay loop hidden>
+        <source src="audio/lyra.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="estrelas-subindo"></div>
+
+    <div class="lyra-container">
+        <header>
+            <h1>🌙 Lyra, a Guardiã da Noite Estelar</h1>
+
+            <p class="frase">“Quando o silêncio fala, as estrelas escutam.”</p>
+        </header>
+
+        <section>
+            <h2>🧝‍♀️ Raça</h2>
+            <p>Elfa da floresta de Lothlórien</p>
+        </section>
+
+        <section>
+            <h2>🏞️ Origem</h2>
+            <p>
+                Nascida nas florestas profundas de Lothlórien, Lyra pertence a uma linhagem antiga de elfos ligados às
+                estrelas e à sabedoria dos céus.
+                Sua família servia Galadriel há gerações, sendo conhecidos como os "Olhos do Céu".
+            </p>
+            <a href="http://lotrproject.com/map/" target="_blank" class="mapa-link">🗺️ Ver mapa de Lothlórien</a>
+        </section>
+
+        <section>
+            <h2>🧠 Personalidade</h2>
+            <p>
+                Sensível, silenciosa e intuitiva. Leal a Eira, cautelosa com Noada. Dotada de dons espirituais e sonhos
+                proféticos.
+            </p>
+        </section>
+
+        <section>
+            <h2>💫 Habilidades</h2>
+            <ul>
+                <li>Furtividade e rastreamento noturno.</li>
+                <li>Pressente magia corrompida e espíritos.</li>
+                <li>Arqueira de elite, dispara do alto das árvores.</li>
+                <li>“Ouve as estrelas” — ecos antigos que revelam o tempo.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🌿 Relacionamentos</h2>
+            <ul>
+                <li><strong>Eira:</strong> Melhor amiga, quase irmã.</li>
+                <li><strong>Galadriel:</strong> Líder reverenciada.</li>
+                <li><strong>Noada:</strong> Observa com respeito e cautela.</li>
+                <li><strong>Thalion:</strong> Silêncio e sintonia em caçadas.</li>
+                <li><strong>Kaelen:</strong> Respeito mútuo, métodos opostos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🌘 Curiosidades</h2>
+            <ul>
+                <li>Nascida em eclipse lunar total — “filha entre mundos”.</li>
+                <li>Visões de uma “sombra com olhos de cinzas”.</li>
+                <li>Pingente de estrela de oito pontas, presente de Galadriel.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📜 Eventos marcantes</h2>
+            <ul>
+                <li>🌑 Nascimento durante eclipse lunar.</li>
+                <li>🌌 Primeira visão profética em noite de lua cheia.</li>
+                <li>🧝‍♀️ Missão dada por Galadriel para seguir com Noada.</li>
+                <li>🌲 Combate silencioso contra espectros em Lothlórien.</li>
+                <li>✨ Noite em que ouviu as estrelas pela primeira vez.</li>
+            </ul>
+        </section>
+
+
+    </div>
+    <div class="carrossel">
+        <div class="carrossel-imagens">
+            <img src="imagens/lyra-1.png" alt="Lyra sob a lua">
+            <img src="imagens/lyra-4.png" alt="Lyra em batalha">
+            <img src="imagens/lyra-3.png" alt="Lyra com Eira">
+            <img src="imagens/lyra.png" alt="Lyra com Eira">
+            <img src="imagens/lyra-8.png" alt="Lyra com Eira">
+        </div>
+
+    </div>
+
+
+    <footer>
+        <a href="terra-media.html" class="voltar">← Voltar para a Terra Média</a>
+    </footer>
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                alert("🌙 Você entrou no domínio de Lyra, Guardiã da Noite Estelar.");
+            }, 1200);
+        });
+    </script>
+    <script>
+        const carrossel = document.querySelector('.carrossel-imagens');
+        const imagens = document.querySelectorAll('.carrossel img');
+        let index = 0;
+
+        function mostrarImagem(i) {
+            const largura = imagens[0].clientWidth;
+            carrossel.style.transform = `translateX(${-i * largura}px)`;
+        }
+
+        setInterval(() => {
+            index = (index + 1) % imagens.length;
+            mostrarImagem(index);
+        }, 5000);
+
+        window.addEventListener('resize', () => mostrarImagem(index));
+        window.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('.voltar');
+            btn.style.opacity = 0;
+            btn.style.transition = 'opacity 2s ease';
+            setTimeout(() => {
+                btn.style.opacity = 1;
+            }, 500);
+        });
+        function gerarEstrelas(qtd) {
+            const container = document.querySelector('.estrelas-subindo');
+            for (let i = 0; i < qtd; i++) {
+                const estrela = document.createElement('div');
+                estrela.className = 'estrela';
+                estrela.style.left = `${Math.random() * 100}%`;
+                estrela.style.animationDelay = `${Math.random() * 6}s`;
+                container.appendChild(estrela);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            gerarEstrelas(60); // número de estrelas subindo
+        });
+
+
+    </script>
+    <script>
+        const elementos = document.querySelectorAll('.revelar');
+
+        function revelarAoScroll() {
+            elementos.forEach(el => {
+                const topo = el.getBoundingClientRect().top;
+                const alturaTela = window.innerHeight;
+                if (topo < alturaTela - 100) {
+                    el.classList.add('visivel');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revelarAoScroll);
+        window.addEventListener('load', revelarAoScroll);
+    </script>
+
+
+</body>
+
+</html>

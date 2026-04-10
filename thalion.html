@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thalion – Guardião de Lindon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #1a1f2b, #2c3e50);
+      color: #e0e0e0;
+    }
+
+    header {
+      background: url('imagens/thalion.png') no-repeat center center;
+      background-size: cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: #f0f0f0;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+.hero {
+  background: linear-gradient(to bottom, #1a1f2b, #2c3e50);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+}
+
+.hero img {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  color: #cddcdd;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #b0c4de;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .timeline li {
+      margin-bottom: 0.5rem;
+    }
+
+    .cards {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #2e3b4e;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(173, 216, 230, 0.2);
+      flex: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(173, 216, 230, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1a1f2b;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    .btn-voltar {
+  display: inline-block;
+  margin: 2rem auto;
+  padding: 0.8rem 1.5rem;
+  background-color: #2c3e50;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #1abc9c;
+}
+
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-content">
+    <img src="imagens/thalion.png" alt="Thalion – Guardião de Lindon" />
+    <div class="hero-text">
+      <h1>Thalion – O Guardião de Lindon</h1>
+      <p>“A luz da floresta vive em mim, e nela encontro força para proteger o que ainda floresce.”</p>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+
+    <section id="biografia">
+      <h2>🌲 Biografia</h2>
+      <p>Thalion nasceu nas últimas gerações élficas de Doriath antes de sua queda, descendente de guerreiros que serviram Thingol e Melian. Após a ruína de Doriath, sua família exilou-se em Lindon, onde ele foi treinado entre os sábios e guerreiros élficos sob a tutela de Gil-galad.</p>
+    </section>
+
+    <section id="familia">
+      <h2>👨‍👩‍👦 Família e Legado</h2>
+      <p>Filho de Elenar e Maerwen, ambos mortos por orcs ao proteger refugiados. Thalion carrega o legado de honra e sacrifício, mantendo viva a memória de Doriath e os ensinamentos de seus ancestrais.</p>
+    </section>
+
+    <section id="missoes">
+      <h2>⚔️ Missões e Feitos</h2>
+      <ul>
+        <li>Proteção das rotas élficas nas Montanhas Azuis</li>
+        <li>Emissário entre Gil-galad e os senhores da floresta</li>
+        <li>Recusa de Valinor para permanecer na Terra-média</li>
+        <li>Resgate furtivo de prisioneiros humanos com Kaelen</li>
+      </ul>
+    </section>
+
+    <section id="linha-do-tempo">
+      <h2>📜 Linha do Tempo</h2>
+      <ul class="timeline">
+        <li><strong>1ª Era:</strong> Nascimento em Doriath</li>
+        <li><strong>2ª Era:</strong> Treinamento em Lindon</li>
+        <li><strong>3ª Era:</strong> Guerra do Anel e recusa de Valinor</li>
+        <li><strong>Atual:</strong> Missão com Kaelen, Noada e Eira</li>
+      </ul>
+    </section>
+
+    <section id="curiosidades">
+      <h2>✨ Curiosidades</h2>
+      <div class="cards">
+        <div class="card">Fala línguas dos Ents e Homens do Norte</div>
+        <div class="card">Memória quase perfeita da Primeira Era</div>
+        <div class="card">Ouve os sussurros das árvores antigas</div>
+        <div class="card">Possui arco de galho de Mallorn, presente de Galadriel</div>
+      </div>
+    </section>
+  </div>
+<a href="terra-media.html" class="btn-voltar">⟵ Voltar</a>
+
+  <footer>
+    Página dedicada ao legado de Thalion. Criada por Noada ✨
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
+    hero.style.opacity = 0;
+    hero.style.transition = "opacity 2s ease-in-out";
+    setTimeout(() => {
+      hero.style.opacity = 1;
+    }, 100);
+  });
+</script>
+
+</body>
+</html>

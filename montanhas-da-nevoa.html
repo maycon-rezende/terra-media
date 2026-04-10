@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Montanhas da Névoa | Terra Média</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    margin: 0;
+    font-family: 'MedievalSharp', cursive;
+    background: linear-gradient(to bottom, #1c1c1c, #3a3a3a);
+    color: #e0e0e0;
+  }
+
+  header {
+    background: url('imagens/montanhas-nevoa-banner.jpg') center/cover no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 6px #000;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+
+  header p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+
+  main {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-left: 5px solid #555;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #c0c0c0;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style-type: circle;
+  }
+
+  button {
+    background-color: #6b0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #8b0000;
+  }
+
+  #citacao {
+    margin-top: 15px;
+    font-style: italic;
+    display: none;
+    color: #ffdddd;
+    border-left: 3px solid #6b0000;
+    padding-left: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #bbb;
+    font-size: 0.9em;
+  }
+
+  footer a {
+    color: #ff4444;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>⛰️ Montanhas da Névoa</h1>
+    <p>Cadeia montanhosa ancestral que abriga segredos profundos, minas perdidas e criaturas sombrias.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📜 História</h2>
+      <p>As Montanhas da Névoa foram criadas por Melkor para separar os elfos. Abrigam Moria, lar dos anões e palco do duelo entre Gandalf e o Balrog.</p>
+    </section>
+
+    <section>
+      <h2>🏞️ Locais Importantes</h2>
+      <ul>
+        <li>Moria (Khazad-dûm)</li>
+        <li>Passo de Caradhras</li>
+        <li>Túneis dos orcs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 Curiosidades</h2>
+      <p>Gandalf caiu lutando contra o Balrog aqui, renascendo como Gandalf, o Branco.</p>
+      <button onclick="mostrarCita()">Ver citação épica</button>
+      <p id="citacao" class="oculto">“Você não passará!” – Gandalf</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>✨ Terra Média - Um mundo criado por J.R.R. Tolkien ✨</p>
+    <a href="terra-media.html">← Voltar para a Terra Média</a>
+  </footer>
+
+  <script>
+  function mostrarCita() {
+    const cita = document.getElementById("citacao");
+    cita.style.display = "block";
+  }
+</script>
+
+</body>
+</html>

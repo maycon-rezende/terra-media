@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mordor | Terra Média</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    margin: 0;
+    font-family: 'UnifrakturCook', cursive;
+    background: linear-gradient(to bottom, #0d0d0d, #2a0000);
+    color: #f2f2f2;
+  }
+
+  header {
+    background: url('imagens/mordor-banner.jpg') center/cover no-repeat;
+    padding: 60px 20px;
+    text-align: center;
+    color: #ff4c4c;
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+
+  header p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+
+  main {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-left: 5px solid #ff4c4c;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #ff4c4c;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style-type: square;
+  }
+
+  button {
+    background-color: #ff4c4c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #ff1a1a;
+  }
+
+  #citacao {
+    margin-top: 15px;
+    font-style: italic;
+    display: none;
+    color: #ffdddd;
+    border-left: 3px solid #ff4c4c;
+    padding-left: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #999;
+    font-size: 0.9em;
+  }
+
+  footer a {
+    color: #ff4c4c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>🔥 Mordor</h1>
+    <p>Terra sombria dominada por Sauron, onde o Um Anel foi forjado e a esperança quase se perdeu.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📜 História</h2>
+      <p>Mordor foi escolhida por Sauron como seu domínio por sua geografia isolada. O Monte da Perdição tornou-se o centro de seu poder maligno.</p>
+    </section>
+
+    <section>
+      <h2>🌋 Locais Importantes</h2>
+      <ul>
+        <li>Monte da Perdição (Orodruin)</li>
+        <li>Barad-dûr – torre de Sauron</li>
+        <li>Portão Negro</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 Curiosidades</h2>
+      <p>O céu de Mordor é sempre escuro. Frodo e Sam destruíram o Um Anel aqui, encerrando a Terceira Era.</p>
+      <button onclick="mostrarCita()">Ver citação épica</button>
+      <p id="citacao" class="oculto">“Um Anel para todos governar, e na escuridão aprisioná-los.”</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>✨ Terra Média - Um mundo criado por J.R.R. Tolkien ✨</p>
+    <a href="terra-media.html">← Voltar para a Terra Média</a>
+  </footer>
+
+  <script>
+  function mostrarCita() {
+    const cita = document.getElementById("citacao");
+    cita.style.display = "block";
+  }
+</script>
+
+</body>
+</html>

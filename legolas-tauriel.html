@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Legolas & Tauriel - Terra Média</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  background: radial-gradient(circle, #e0f2f1, #a5d6a7);
+  font-family: 'Cormorant Garamond', serif;
+  color: #2e7d32;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(56, 142, 60, 0.3);
+  padding: 25px;
+  text-align: center;
+  border-bottom: 3px solid #66bb6a;
+}
+
+h1 {
+  font-size: 2.6em;
+  color: #1b5e20;
+}
+
+section {
+  margin: 40px auto;
+  width: 85%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(85, 139, 47, 0.3);
+  transition: all 0.5s ease;
+}
+
+section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #66bb6a;
+}
+
+blockquote {
+  font-style: italic;
+  color: #388e3c;
+  border-left: 6px solid #43a047;
+  padding-left: 15px;
+  margin: 25px 0;
+  background: rgba(200, 230, 201, 0.3);
+}
+
+.galeria {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 230px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #4caf50;
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.07);
+}
+a[href="index.html"] {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #66bb6a;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(102, 187, 106, 0.3);
+}
+
+a[href="index.html"]:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(56, 142, 60, 0.4);
+}
+.container-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+.fundo-legolas {
+  position: relative;
+  min-height: 100vh;   /* ocupa pelo menos a altura da tela */
+  overflow-x: hidden;  /* evita rolagem lateral indesejada */
+  overflow-y: auto;    /* permite rolagem vertical */
+}
+
+
+.folha {
+  position: absolute;
+  top: -20px;
+  font-size: 24px;
+  opacity: 0.6;
+  animation: cairFolha linear infinite;
+}
+
+@keyframes cairFolha {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+@keyframes aparecer {
+  0% { opacity: 0; }
+  100% { opacity: 1; text-shadow: 0 0 5px #ce93d8; }
+}
+.nome-legolas:hover, .nome-tauriel:hover {
+  color: #8e24aa;
+  text-shadow: 0 0 10px #ba68c8;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="fundo-legolas">
+
+  <header>
+    <h1>🏹 Legolas & Tauriel</h1>
+    <p>Do reino élfico de Mirkwood, nasceu uma ligação entre dois corações rebeldes.</p>
+    <p><strong class="nome-legolas">Legolas</strong> olhou para <strong class="nome-tauriel">Tauriel</strong> como quem escuta a floresta sussurrar.</p>
+
+  </header>
+
+  <main>
+    <section>
+      <h2>🌲 Guerreiros da Floresta</h2>
+      <p>Legolas, príncipe do reino da floresta, e Tauriel, capitã da guarda. Unidos pela luta contra o mal e pela vontade de ultrapassar os limites impostos pela hierarquia élfica.</p>
+    </section>
+
+    <section>
+      <h2>💫 Amor não reconhecido</h2>
+      <p>Embora sua ligação fosse profunda, os caminhos da tradição mantiveram seu amor nas sombras. Mas nem o silêncio da floresta pode calar sentimentos verdadeiros.</p>
+    </section>
+
+    <section>
+      <h2>💬 Fragmentos do Coração</h2>
+      <blockquote>“A floresta canta diferente quando estás ao meu lado.” — Legolas</blockquote>
+      <blockquote>“Minhas flechas voam por justiça, mas meu coração por ti.” — Tauriel</blockquote>
+    </section>
+
+    <section>
+      <h2>🌌 Ecos de Emoção</h2>
+      <div class="galeria">
+        <img src="imagens/legolas-tauriel-1.png" alt="Combate lado a lado">
+        <img src="imagens/legolas-tauriel-2.png" alt="Olhares sob o luar">
+        <img src="imagens/legolas-tauriel-3.png" alt="A flecha do adeus">
+      </div>
+    </section>
+
+    <section>
+      <h2>🌄 O Caminho Seguinte</h2>
+      <p>Após os eventos da Guerra dos Cinco Exércitos, Tauriel partiu em exílio. Legolas buscou novas trilhas — e nunca deixou de ouvir o canto suave da floresta... que um dia foi a voz de Tauriel.</p>
+    </section>
+  </main>
+  <div class="container-botao">
+  <a href="terra-media.html">🌿 Voltar para a Terra Média</a>
+  </div>
+  
+  <footer>
+    <p>✨ Criado por Noada ✨</p>
+  </footer>
+</div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const secoes = document.querySelectorAll("section");
+    secoes.forEach((secao, i) => {
+      secao.style.opacity = 0;
+      secao.style.transform = "translateY(40px)";
+      setTimeout(() => {
+        secao.style.transition = "all 1s ease";
+        secao.style.opacity = 1;
+        secao.style.transform = "translateY(0)";
+      }, i * 300);
+    });
+
+    const frases = document.querySelectorAll("blockquote");
+    frases.forEach((frase) => {
+      frase.style.transition = "box-shadow 0.8s ease-in-out";
+      setInterval(() => {
+        frase.style.boxShadow = "0 0 15px #81c784";
+        setTimeout(() => {
+          frase.style.boxShadow = "none";
+        }, 800);
+      }, 4000);
+    });
+  });
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const fundo = document.querySelector(".fundo-legolas");
+  if (fundo) {
+    for (let i = 0; i < 15; i++) {
+      const folha = document.createElement("div");
+      folha.textContent = "🍃";
+      folha.className = "folha";
+      // Garante que as folhas fiquem dentro da largura da tela
+      folha.style.left = `${Math.random() * (window.innerWidth - 32)}px`;
+      folha.style.animationDuration = `${4 + Math.random() * 4}s`;
+      fundo.appendChild(folha);
+    }
+  } else {
+    console.warn("Elemento .fundo-legolas não encontrado.");
+  }
+});
+</script>
+</body>
+</html>

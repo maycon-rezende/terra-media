@@ -1,0 +1,955 @@
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terra Média - O Mundo de Tolkien</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #030303 100%);
+        color: #f4f4f4;
+        overflow-x: hidden;
+      }
+
+      /* Animações */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% center;
+        }
+
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      /* Header */
+      .header {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="stars"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.8"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><rect fill="%23000011" width="1200" height="800"/><circle cx="100" cy="100" r="1" fill="url(%23stars)"/><circle cx="300" cy="200" r="1.5" fill="url(%23stars)"/><circle cx="500" cy="80" r="1" fill="url(%23stars)"/><circle cx="700" cy="150" r="1.2" fill="url(%23stars)"/><circle cx="900" cy="250" r="1" fill="url(%23stars)"/><circle cx="1100" cy="120" r="1.5" fill="url(%23stars)"/></svg>');
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+        animation: shimmer 3s ease-in-out infinite;
+      }
+
+      .title {
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #c9c9c9;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s ease-out 0.3s both;
+      }
+
+      .ring {
+        width: 120px;
+        height: 120px;
+        border: 8px solid #ffd700;
+        border-radius: 50%;
+        position: relative;
+        margin: 2rem auto;
+        animation: float 3s ease-in-out infinite;
+        box-shadow: 0 0 50px rgba(255, 215, 0, 0.8),
+          inset 0 0 20px rgba(255, 215, 0, 0.3);
+      }
+
+      .ring::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border: 2px solid rgba(255, 215, 0, 0.5);
+        border-radius: 50%;
+        animation: float 3s ease-in-out infinite reverse;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #f4f4f4;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: #ffd700;
+        transform: translateY(-2px);
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffd700;
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      /* Sections */
+      .section {
+        padding: 5rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #ffd700;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #ffd700, transparent);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .card {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .card:hover::before {
+        left: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.5);
+      }
+
+      .card h3 {
+        color: #ffd700;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .card p {
+        line-height: 1.6;
+        color: #c9c9c9;
+      }
+
+      /* Interactive Map */
+      .map-container {
+        background: linear-gradient(145deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .map-regions {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .region {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        border-radius: 15px;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .region:hover {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+        border-color: #ffd700;
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      }
+
+      .region h4 {
+        color: #ffd700;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Characters Section */
+      .characters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin-top: 3rem;
+      }
+
+      .character {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: 3px solid rgba(255, 215, 0, 0.3);
+      }
+
+      .character:hover {
+        transform: scale(1.1) rotate(5deg);
+        border-color: #ffd700;
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+      }
+
+      .character-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+      }
+
+      .character-name {
+        font-size: 0.9rem;
+        text-align: center;
+        color: #c9c9c9;
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+        padding: 3rem 2rem;
+        text-align: center;
+        border-top: 1px solid rgba(255, 215, 0, 0.3);
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .nav {
+          padding: 0.5rem 1rem;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .nav-links a {
+          font-size: 0.9rem;
+        }
+
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .map-regions {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .casais-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .casal-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #90a4ae;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+    text-decoration: none;
+    color: #37474f;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .casal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #b0bec5;
+  }
+
+  .casal-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .region {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #888;
+    border-radius: 8px;
+  }
+  .region h3 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+  }
+  .region p {
+    color: #ddd;
+  }
+  .p2{
+    position:fixed
+  }
+  .linha-do-tempo ul, .tradition ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .linha-do-tempo li, .tradition li {
+    margin-bottom: 0.5rem;
+    color: #eee;
+  }
+  .mapa img {
+    margin-top: 1rem;
+  }
+  .citacoes blockquote {
+    font-style: italic;
+    color: #ccc;
+    border-left: 4px solid #999;
+    padding-left: 1rem;
+    margin: 1rem 0;
+  }
+  .casais-lendarios {
+    background: linear-gradient(135deg, #2c2c54, #474787);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1s ease;
+  }
+
+  .titulo-casais {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffd1dc;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+    text-shadow: 1px 1px 2px #000;
+  }
+
+  .lista-casais {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  .lista-casais li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #f4f4f4;
+    font-style: italic;
+    transition: transform 0.3s ease;
+  }
+
+  .lista-casais li:hover {
+    transform: scale(1.05);
+    color: #ffd700;
+  }
+  #historia {
+    background-color: transparent;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: auto;
+  }
+
+  #historia h2 {
+    font-size: 2.5em;
+    color: #96603f;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #historia article {
+    margin-bottom: 30px;
+  }
+
+  #historia h3 {
+    font-size: 1.5em;
+    color: #7a5c3d;
+    margin-bottom: 10px;
+  }
+
+  #historia p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+
+.ultimas-noticias {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-left: 5px solid #d4af37;
+  color: #f0e6d2;
+  font-family: 'Garamond', serif;
+  box-shadow: 0 0 10px #d4af37;
+  margin: 40px 0;
+}
+
+.ultimas-noticias h2 {
+  font-size: 2em;
+  color: #d4af37;
+  text-shadow: 1px 1px 3px #000;
+  margin-bottom: 20px;
+}
+
+.ultimas-noticias article {
+  margin-bottom: 30px;
+}
+
+.ultimas-noticias h3 {
+  font-size: 1.4em;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.ultimas-noticias p {
+  line-height: 1.6;
+}
+
+
+.tradicoes-costumes {
+  background-color: rgba(25, 25, 25, 0.8);
+  border-left: 5px solid #d4af37; /* dourado estilo élfico */
+  padding: 20px;
+  margin: 30px 0;
+  font-family: 'Garamond', serif;
+  color: #f0e6d2;
+  box-shadow: 0 0 10px #d4af37;
+}
+
+.tradicoes-costumes h2 {
+  font-size: 2em;
+  color: #d4af37;
+  text-shadow: 1px 1px 2px #000;
+  margin-bottom: 15px;
+}
+
+.tradicoes-costumes ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.tradicoes-costumes li::before {
+  content: '✨ ';
+  color: #d4af37;
+}
+.citacoes-memoraveis {
+  background: linear-gradient(to bottom, #1c1c1c, #2e2e2e);
+  border: 2px solid #d4af37;
+  padding: 25px;
+  margin: 40px 0;
+  font-family: 'Georgia', serif;
+  color: #f8f8f2;
+  box-shadow: 0 0 15px #d4af37;
+  border-radius: 10px;
+}
+
+.citacoes-memoraveis h2 {
+  font-size: 2.2em;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.citacoes-memoraveis p {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 15px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.citacoes-memoraveis p::before {
+  content: '“';
+  font-size: 2em;
+  color: #d4af37;
+  position: absolute;
+  left: 0;
+  top: -5px;
+}
+.ultimas-noticias article:nth-child(n+5) {
+  border-top: 1px dashed #d4af37;
+  padding-top: 20px;
+}
+
+.explore-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background-color: #d6c8a2;
+  color: #3b2f1e;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #bfae84;
+}
+.botao-viloes {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2e2e2e;
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
+  transition: background-color 0.3s ease;
+}
+
+.botao-viloes:hover {
+  background-color: #444;
+}
+
+    </style>
+  </head>
+
+  <body>
+    
+    
+    <audio autoplay loop hidden>
+      <source src="audio/01 prologo.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#regions">Regiões</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="historia.html">História</a>
+        <li><a href="magos.html">Magos</a></li>
+        <li> <a href="fortalezas.html"> Fortalezas</a></li>
+        <li><a href="dragoes.html"> Dragões</a></li>
+        <li> <a href="viloes.html">Vilões</a></li>
+
+        
+      </ul>
+    </nav>
+
+ 
+  
+
+    <!-- Header -->
+    <header class="header" id="home">
+      <h1 class="title">TERRA MÉDIA</h1>
+      <p class="subtitle">O Mundo Épico de J.R.R. Tolkien</p>
+      <div class="ring"></div>
+      <p class="p2" style="text-align: center; max-width: 600px; line-height: 1.8; animation: fadeInUp 1s ease-out 0.6s both;">
+        Embarque em uma jornada através das terras místicas onde elfos, anões, hobbits e homens
+        vivem suas aventuras épicas. Descubra os segredos da Terra Média.
+      </p>
+
+    </header>
+    <h2 style="color: #d4af37; text-shadow: 1px 1px 3px #000;">
+  🗞️ Últimas da Terra Média
+</h2>
+
+
+    <!-- Regions Section -->
+    <section class="section" id="regions">
+      <h2 class="section-title">Regiões da Terra Média</h2>
+      <!-- ... conteúdo das regiões permanece igual ... -->
+  <div class="region">
+    <a href="floresta-das-trevas.html" style="text-decoration:none; color:inherit;">
+      <h3>🌲 Floresta das Trevas (Mirkwood)</h3>
+      <p>Lar dos elfos silvestres e do rei Thranduil. É uma floresta densa e misteriosa, onde a luz do sol raramente toca o chão.</p>
+    </a>
+  </div>
+
+  <div class="region">
+    <a href="minas-tirith.html" style="text-decoration:none; color:inherit;">
+      <h3>🏰 Minas Tirith</h3>
+      <p>A majestosa cidade branca de Gondor, construída na encosta da Montanha Mindolluin. Foi palco da grande Batalha dos Campos de Pelennor.</p>
+    </a>
+  </div>
+
+  <div class="region">
+    <a href="montanhas-da-nevoa.html" style="text-decoration:none; color:inherit;">
+      <h3>⛰️ Montanhas da Névoa</h3>
+      <p>Uma cadeia montanhosa perigosa que abriga as minas de Moria e os túneis dos orcs. Gandalf enfrentou o Balrog aqui.</p>
+    </a>
+  </div>
+
+  <div class="region">
+    <a href="lothlorien.html" style="text-decoration:none; color:inherit;">
+      <h3>🌿 Lothlórien</h3>
+      <p>O reino élfico de Galadriel, onde o tempo parece parar. Um refúgio de paz e sabedoria entre as árvores douradas.</p>
+    </a>
+  </div>
+
+  <div class="region">
+    <a href="mordor.html" style="text-decoration:none; color:inherit;">
+      <h3>🔥 Mordor</h3>
+      <p>Terra sombria dominada por Sauron. O Monte da Perdição ergue-se como um símbolo do mal, onde o Um Anel foi forjado.</p>
+    </a>
+  </div>
+  <div class="region">
+    <a href="condado.html" style="text-decoration:none; color:inherit;">
+      <h3>🌾 O Condado  </h3>
+      <p>Terra dos hobbits, repleta de colinas verdes, festas, banquetes e tranquilidade. Lar de Frodo, Sam e Bilbo.</p>
+    </a>
+  </div>
+  <div class="region">
+    <a href="rohan.html" style="text-decoration:none; color:inherit;">
+      <h3>🐎 Rohan</h3>  
+      <p>O reino dos Cavaleiros da Terra, liderado por Théoden. Conhecido por seus campos abertos e cavalos majestosos.</p>
+    </a>
+  </div>
+  <div class="region">
+    <a href="gondor.html" style="text-decoration:none; color:inherit;">
+      <h3>🏰 Gondor  </h3>
+      <p>O último grande reino dos homens. Minas Tirith ergue-se como bastião da esperança contra as forças de Mordor.</p>
+    </a>
+  </div>
+  <div class="region">
+    <a href="valfenda.html" style="text-decoration:none; color:inherit;">
+      <h3>🌿 Valfenda  </h3>
+      <p>Refúgio élfico liderado por Elrond. Um lugar de sabedoria, cura e conselhos antigos, onde a Sociedade do Anel foi formada.</p>
+    </a>
+  </div>
+  </section>
+<section class="ultimas-noticias">
+  <h2>🗞️ Últimas da Terra Média</h2>
+
+  <article>
+    <h3>🏰 Fundação da Sociedade do Anel</h3>
+    <p><strong>Valfenda, 25 de Dezembro da Terceira Era</strong><br>
+    Em um conselho liderado por Elrond, representantes dos povos livres formaram a Sociedade do Anel. Frodo Bolseiro foi escolhido como portador, e a missão de destruir o Um Anel começou.</p>
+  </article>
+
+  <article>
+    <h3>🧝‍♀️ Galadriel entrega os presentes em Lothlórien</h3>
+    <p><strong>Lothlórien, Janeiro da Terceira Era</strong><br>
+    A Senhora Galadriel presenteou os membros da Sociedade com artefatos élficos. Frodo recebeu o frasco de luz de Eärendil, e Gimli pediu um fio de cabelo da dama — um gesto que se tornaria lendário.</p>
+  </article>
+
+  <article>
+    <h3>🐎 Batalha dos Campos de Pelennor</h3>
+    <p><strong>Minas Tirith, 15 de Março da Terceira Era</strong><br>
+    As forças de Gondor e Rohan enfrentaram o exército de Sauron. O Rei Théoden caiu em combate, mas Éowyn derrotou o Rei Bruxo de Angmar, quebrando uma antiga profecia.</p>
+  </article>
+
+  <article>
+    <h3>🧙‍♂️ Retorno de Gandalf como o Branco</h3>
+    <p><strong>Montanhas da Névoa, após o duelo com o Balrog</strong><br>
+    Gandalf, antes o Cinzento, retornou como Gandalf, o Branco, assumindo o papel de líder dos Istari. Sua presença renovou a esperança entre os povos livres.</p>
+  </article>
+  <article>
+  <h3>🌊 Chegada de Legolas e Gimli à Terra Pura</h3>
+  <p><strong>Ano 120 da Quarta Era</strong><br>
+  Após séculos de amizade e aventuras, Legolas construiu um navio élfico e partiu rumo a Valinor, levando consigo Gimli, o primeiro anão a pisar na Terra Imortal. Um gesto que selou a união entre elfos e anões.</p>
+</article>
+
+<article>
+  <h3>🏗️ Reconstrução de Osgiliath</h3>
+  <p><strong>Ano 15 da Quarta Era</strong><br>
+  Sob o reinado de Elessar, a antiga capital de Gondor começou a ser restaurada. Elfos de Lothlórien e anões de Erebor colaboraram na reconstrução, trazendo de volta a glória das estrelas sobre o Anduin.</p>
+</article>
+
+<article>
+  <h3>🌞 Celebração do Solstício em Lothlórien</h3>
+  <p><strong>Solstício de Verão, Quarta Era</strong><br>
+  Os elfos de Lothlórien celebraram o solstício com canções em Quenya, danças entre as mellyrn douradas e oferendas à luz de Varda. Visitantes de Valfenda e do Condado foram recebidos com hospitalidade e maravilha.</p>
+</article>
+
+</section>
+
+<section class="explore-eras">
+  <h2>📜 Explore as Eras da Terra Média</h2>
+  <p>Viaje pelas principais eras da história da Terra Média e descubra os eventos que moldaram esse mundo épico.</p>
+  <a href="eras.html" class="explore-button">🌟 Ver todas as Eras</a>
+</section>
+    
+    <!-- Lore Section -->
+  <section id="historia">
+    <h2>📜 História e Tradições da Terra Média</h2>
+
+    <article>
+      <h3>🌍 A Criação do Mundo</h3>
+      <p>
+        A Terra Média foi moldada pelos Ainur sob a orientação de Eru Ilúvatar. Os Valar, seres poderosos, deram forma às montanhas, mares e florestas, preparando o mundo para os Filhos de Ilúvatar: elfos e homens.
+      </p>
+    </article>
+
+    <article>
+      <h3>🧝 Tradições Élficas</h3>
+      <p>
+        Os elfos valorizam a música, a poesia e a sabedoria. Suas tradições são preservadas em canções antigas e em línguas como o Quenya e o Sindarin. Celebram as estrelas e vivem em harmonia com a natureza.
+      </p>
+    </article>
+
+    <article>
+      <h3>🛡️ Os Reinos dos Homens</h3>
+      <p>
+        Gondor e Rohan são os principais reinos dos homens. Gondor honra a linhagem de Númenor, enquanto Rohan cultiva a bravura dos cavaleiros e a lealdade ao seu povo. Suas tradições são transmitidas por histórias orais e batalhas memoráveis.
+      </p>
+    </article>
+
+    <article>
+      <h3>🍂 Os Hobbits e Sua Simplicidade</h3>
+      <p>
+        No Condado, os hobbits vivem uma vida pacata, celebrando colheitas, aniversários e refeições fartas. Suas tradições giram em torno da comunidade, da família e da alegria nas pequenas coisas.
+      </p>
+    </article>
+  </section>
+<section class="tradicoes-costumes">
+  <h2>Tradições e Costumes</h2>
+  <ul>
+    <li><strong>Elfos:</strong> Cantam sobre as estrelas e preservam memórias em canções.</li>
+    <li><strong>Hobbits:</strong> Celebram aniversários com festas e banquetes generosos.</li>
+    <li><strong>Anões:</strong> Honram seus ancestrais com runas, forjas e túneis sagrados.</li>
+    <li><strong>Homens:</strong> Cultuam a bravura, a honra e a linhagem dos reis antigos.</li>
+  </ul>
+</section>
+
+
+
+
+    <section id="casais-lendarios" class="casais-lendarios">
+    <h2>💘 Casais Lendários da Terra Média💘</h2>
+    <div class="casais-container">
+      <a href="noada-eira.html" class="casal-card">
+        <img src="imagens/eira-noada.png" alt="Noada e Eira">
+        <h3>Noada & Eira</h3>
+      </a>
+      <a href="aragorn-arwen.html" class="casal-card">
+        <img src="imagens/aragorn-arwen-2.jpg" alt="Aragorn e Arwen">
+        <h3>Aragorn & Arwen</h3>
+      </a>
+      <a href="legolas-tauriel.html" class="casal-card">
+        <img src="imagens/legolas-tauriel.webp" alt="Legolas e Tauriel">
+        <h3>Legolas & Tauriel</h3>
+      </a>
+        <a href="thalion-lyra.html" class="casal-card">
+        <img src="imagens/thalion-lyra.png" alt="Thalion e Lyra">
+        <h3>Thalion & Lyra</h3>
+      </a>
+    </div>
+  </section>
+
+<section class="citacoes-memoraveis">
+  <h2>Citações Memoráveis</h2>
+  <p>Nem todos os que vagueiam estão perdidos." – J.R.R. Tolkien</p>
+  <p>Até mesmo a menor pessoa pode mudar o curso do futuro." – Galadriel</p>
+  <p>Um Anel para todos governar, um Anel para encontrá-los, um Anel para todos trazer e na escuridão aprisioná-los".</p>
+</section>
+    <footer class="footer">
+      <p>✨ Terra Média - Um mundo criado por J.R.R. Tolkien ✨</p>
+      <p style="margin-top: 1rem; color: #888;">"Nem todos os que vagueiam estão perdidos"</p>
+    </footer>
+
+  </body>
+
+  </html>
+
+
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Region info
+    function showRegionInfo(region) {
+      const info = {
+        condado: "O Condado é uma região pacífica habitada pelos Hobbits, conhecida por suas colinas verdes, buracos aconchegantes e uma vida simples e tranquila.",
+        rivendell: "Rivendell é um refúgio élfico governado por Elrond, um lugar de cura e sabedoria onde o tempo parece passar mais devagar.",
+        rohan: "Rohan é a terra dos cavaleiros, famosa por seus guerreiros montados e vastas planícies onde correm os melhores cavalos da Terra Média.",
+        gondor: "Gondor é o maior reino dos homens, com a majestosa cidade de Minas Tirith como sua capital, guardião contra as forças da escuridão.",
+        mordor: "Mordor é a terra sombria de Sauron, dominada pelo Monte da Perdição onde o Um Anel foi forjado e deve ser destruído.",
+        lothlorien: "Lothlórien é uma floresta élfica governada por Galadriel e Celeborn, protegida por poderosa magia e beleza atemporal."
+      };
+
+      alert(info[region]);
+    }
+
+    // Character info
+    function showCharacterInfo(character) {
+      const info = {
+        frodo: "Frodo Bolseiro, o corajoso Hobbit que carregou o fardo do Um Anel até o Monte da Perdição para salvar a Terra Média.",
+        gandalf: "Gandalf, o Cinzento, um dos Istari enviados para ajudar os Povos Livres contra Sauron. Sábio, poderoso e protetor.",
+        aragorn: "Aragorn, filho de Arathorn, o Rei que retornou para reclamar o trono de Gondor e liderar a luta final contra o mal.",
+        legolas: "Legolas, príncipe élfico de Eryn Lasgalen, mestre arqueiro e membro da Sociedade do Anel.",
+        gimli: "Gimli, filho de Glóin, guerreiro anão corajoso que se tornou grande amigo de Legolas, quebrando antigas rivalidades.",
+        galadriel: "Galadriel, Senhora de Lothlórien, uma das mais poderosas elfas da Terra Média, guardiã de Nenya, o Anel da Água."
+      };
+
+      alert(info[character]);
+    }
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('.header');
+      if (header) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s ease-out forwards';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.section, .card, .character').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
+  </body>
+
+  </html>
+
+
+
+
+

@@ -1,80 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Portal da Terra Média</title>
-  <style>
-    body {
-     background: url('imagens/mellon.avif') center center / cover no-repeat fixed;
-      background-size: cover;
-      font-family: 'Cinzel', serif;
-     color: #ffffff;
-    text-shadow: 2px 2px 4px #000;
-
-
-      text-align: center;
-      padding-top: 100px;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 5px;
-      border: none;
-      width: 200px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      border-radius: 5px;
-      background-color: #444;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #666;
-    }
-
-    .fade-in {
-      animation: fadeIn 2s ease-in-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A porta de entrada para o universo da Terra Média.">
+  <title>Portões de Moria | Terra Média</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="responsive.css">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { min-height: 100svh; margin: 0; display: grid; place-items: center; overflow: hidden; background: linear-gradient(rgba(0, 9, 14, .35), rgba(0, 5, 9, .7)), url('imagens/mellon.avif') center / cover no-repeat; color: #f6f1de; font-family: 'Marcellus', Georgia, serif; }
+    .portal { width: min(100% - 2rem, 680px); padding: clamp(2rem, 7vw, 4.5rem) 1.25rem; text-align: center; text-shadow: 0 2px 12px #000; }
+    .eyebrow { margin: 0 0 1rem; color: #d8b963; font: 600 clamp(.7rem, 2vw, .9rem)/1.4 'Cinzel', serif; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { margin: 0; font: 700 clamp(2rem, 8vw, 4.6rem)/1.1 'Cinzel', serif; }
+    .instruction { margin: 1.25rem auto 2rem; max-width: 38ch; color: #ded9c5; font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.65; }
+    .elvish-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin: 0 0 1.5rem; padding: .4rem .75rem; border: 1px solid transparent; border-radius: 8px; background: transparent; color: #e5cc82; cursor: pointer; font: 600 clamp(1rem, 3vw, 1.25rem)/1.45 'Cinzel', serif; letter-spacing: .04em; text-decoration: underline dotted rgba(229, 204, 130, .75); text-underline-offset: .35em; }
+    .elvish-button:hover, .elvish-button:focus-visible { border-color: rgba(229, 204, 130, .8); outline: none; }
+    .hint { min-height: 1.5em; margin: -1rem 0 1.25rem; color: #fff0b5; font-size: .95rem; }
+    form { display: grid; gap: .85rem; width: min(100%, 360px); margin: auto; }
+    label { text-align: left; font: 600 .78rem 'Cinzel', serif; letter-spacing: .08em; text-transform: uppercase; }
+    input, button[type="submit"] { min-height: 48px; border-radius: 8px; font: inherit; }
+    input { width: 100%; border: 1px solid rgba(239, 224, 171, .7); background: rgba(0, 11, 15, .65); padding: 0 .9rem; color: #fff; }
+    input:focus { outline: 2px solid #e5cc82; outline-offset: 2px; }
+    button[type="submit"] { border: 1px solid #e5cc82; background: rgba(229, 204, 130, .16); color: #fff5ce; cursor: pointer; font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: .06em; transition: background .2s ease, transform .2s ease; }
+    button[type="submit"]:hover { background: rgba(229, 204, 130, .32); transform: translateY(-2px); }
+    .message { min-height: 1.4em; margin: 1rem 0 0; color: #ffd18a; }
+    .portal.entering { animation: enter 1.1s ease forwards; }
+    @keyframes enter { to { opacity: 0; transform: scale(1.04); } }
+  </style>
 </head>
 <body>
-  <h2>Fale, amigo, e entre.</h2>
-  <input type="text" id="palavraSecreta" placeholder="Digite a palavra...">
-  <br>
-  <button onclick="verificarPalavra()">Entrar</button>
-
+  <main class="portal" id="portal">
+    <p class="eyebrow">Portões Ocidentais de Moria</p>
+    <h1>Fale, amigo, e entre.</h1>
+    <p class="instruction">Somente uma palavra abre os portões. Se esta é sua primeira visita, procure a inscrição dos elfos.</p>
+    <button class="elvish-button" id="revealHint" type="button" aria-describedby="hint">Pedō mellon a minno</button>
+    <p class="hint" id="hint" aria-live="polite"></p>
+    <form id="entryForm">
+      <label for="palavraSecreta">A palavra de entrada</label>
+      <input id="palavraSecreta" name="palavra" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Digite a palavra..." required>
+      <button type="submit">Entrar na Terra Média</button>
+    </form>
+    <p class="message" id="message" role="status" aria-live="polite"></p>
+  </main>
   <script>
-    function verificarPalavra() {
-      const entrada = document.getElementById("palavraSecreta").value.trim().toLowerCase();
-      if (entrada === "mellon") {
-        document.body.classList.add("fade-in");
-        setTimeout(() => {
-          window.location.href = "terra-media.html"; // redireciona após animação
-        }, 2000);
-      } else {
-        alert("Nada acontece... tente novamente.");
+    const form = document.getElementById('entryForm');
+    const input = document.getElementById('palavraSecreta');
+    const hint = document.getElementById('hint');
+    const message = document.getElementById('message');
+    document.getElementById('revealHint').addEventListener('click', () => {
+      hint.textContent = 'A inscrição diz: “Diga amigo e entre.” Em sindarin, amigo é “mellon”.';
+      input.focus();
+    });
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (input.value.trim().toLowerCase() !== 'mellon') {
+        message.textContent = 'Nada acontece... observe a inscrição élfica e tente novamente.';
+        input.focus();
+        return;
       }
-    }
+      sessionStorage.setItem('terraMediaEntered', 'true');
+      message.textContent = 'Os portões se abrem...';
+      document.getElementById('portal').classList.add('entering');
+      window.setTimeout(() => { window.location.href = 'terra-media.html'; }, 1050);
+    });
   </script>
 </body>
 </html>

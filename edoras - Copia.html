@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Edoras | Reino de Rohan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('imagens/edoras.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Cinzel', serif;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.65);
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      border: 1px solid #ccc;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    button.voltar {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      border: 2px solid #bdc3c7;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.voltar:hover {
+      background-color: #34495e;
+    }
+
+    .citacao {
+      font-style: italic;
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .citacao.mostrar {
+      opacity: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    thead {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .timeline div {
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 8px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .timeline div:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐎 Edoras – Capital de Rohan</h1>
+
+    <section>
+      <h2>📜 História</h2>
+      <p>
+        Edoras foi construída por <strong>Brego</strong>, filho de <strong>Eorl, o Jovem</strong>, no Vale de Harrowdale, aos pés das Montanhas Brancas. Tornou-se a capital de Rohan e sede do <strong>Salão Dourado de Meduseld</strong>, onde os reis governavam e eram sepultados.
+      </p>
+      <p>
+        Em 2758 T.E., foi invadida por <strong>Wulf</strong>, um Dunlending, que usurpou o trono. Após o Longo Inverno, <strong>Fréaláf</strong> reconquistou a cidade. Durante a Guerra do Anel, foi palco da restauração de <strong>Théoden</strong>, que liderou os Cavaleiros de Rohan até a Batalha dos Campos de Pelennor.
+      </p>
+    </section>
+
+    <section>
+      <h2>🏰 Arquitetura e Cultura</h2>
+      <p>
+        Edoras é marcada por construções de madeira, telhados dourados e tapeçarias que narram a história dos Rohirrim. O <strong>Meduseld</strong>, o Salão do Hidromel, é o coração da cidade, com pilares esculpidos e lajes coloridas. A cultura valoriza a bravura, a lealdade e a conexão com a terra e os cavalos.
+      </p>
+    </section>
+
+    <section>
+      <h2>📅 Linha do Tempo</h2>
+      <div class="timeline">
+        <div onclick="alert('Fundação por Brego, filho de Eorl')">🟢 2569 T.E. – Fundação de Edoras</div>
+        <div onclick="alert('Invasão de Wulf e usurpação do trono')">🔴 2758 T.E. – Tomada por Wulf</div>
+        <div onclick="alert('Reconquista por Fréaláf após o Longo Inverno')">🟡 2759 T.E. – Retomada por Fréaláf</div>
+        <div onclick="alert('Gandalf cura Théoden e restaura sua liderança')">⚪ 3019 T.E. – Restauração de Théoden</div>
+        <div onclick="alert('Théoden parte para a Batalha dos Campos de Pelennor')">🟣 3019 T.E. – Cavalgada dos Rohirrim</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>👑 Reis de Rohan</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Reinado</th>
+            <th>Fato Marcante</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Eorl, o Jovem</td>
+            <td>2510–2545 T.E.</td>
+            <td>Fundador de Rohan</td>
+          </tr>
+          <tr>
+            <td>Brego</td>
+            <td>2545–2570 T.E.</td>
+            <td>Construiu Edoras e Meduseld</td>
+          </tr>
+          <tr>
+            <td>Fréaláf</td>
+            <td>2759–2798 T.E.</td>
+            <td>Reconquistou Edoras de Wulf</td>
+          </tr>
+          <tr>
+            <td>Théoden</td>
+            <td>2980–3019 T.E.</td>
+            <td>Liderou os Rohirrim na Guerra do Anel</td>
+          </tr>
+          <tr>
+            <td>Éomer</td>
+            <td>3019 T.E. em diante</td>
+            <td>Sucessor de Théoden</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <button onclick="mostrarCitacao()">✨ Ver citação de Théoden</button>
+    <p class="citacao" id="citacao">“Erguei-vos, Cavaleiros de Théoden! Lança será agitada, escudo será partido, um dia vermelho antes do nascer do sol!”</p>
+
+    <button class="voltar" onclick="window.location.href='rohan.html'">← Voltar para Rohan</button>
+  </div>
+
+  <script>
+    function voltarParaMapa() {
+      window.location.href = 'terra-media.html';
+    }
+
+    function mostrarCitacao() {
+      document.getElementById('citacao').classList.add('mostrar');
+    }
+  </script>
+</body>
+</html>

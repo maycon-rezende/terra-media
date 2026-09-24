@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Radagast – O Castanho</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imagens/radagast.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f8e0;
+      font-family: 'Garamond', serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      color: #98fb98;
+      text-shadow: 0 0 10px #000, 0 0 20px #228b22;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+    }
+
+    h2, h3 {
+      color: #90ee90;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🍄 ";
+      margin-right: 5px;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #e0ffe0;
+      border-left: 4px solid #228b22;
+      padding-left: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 10px 20px;
+      background-color: #556b2f;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6b8e23;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #90ee90;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <main>
+    <h1>Radagast</h1>
+    <h2>O Castanho</h2>
+
+    <section>
+      <p>Radagast foi um dos cinco Istari enviados pelos Valar à Terra Média. Escolhido por Yavanna, ele se dedicou à proteção da natureza e das criaturas selvagens. Recluso e excêntrico, vivia em Rhosgobel, nas bordas da Floresta das Trevas.</p>
+    </section>
+
+    <section>
+      <h3>🦔 Amigo dos Animais</h3>
+      <p>Radagast era conhecido por sua ligação profunda com aves, esquilos, cervos e até insetos. Comunicava-se com eles e os protegia, ignorando muitas vezes os assuntos dos homens e elfos.</p>
+    </section>
+
+    <section>
+      <h3>📜 Citação</h3>
+      <blockquote>“As criaturas pequenas também têm sua parte na grande tapeçaria da Terra Média.”</blockquote>
+    </section>
+
+    <section>
+      <h3>✨ Curiosidades</h3>
+      <ul>
+        <li>Seu nome significa “cuidador de animais” em Adûnaico.</li>
+        <li>Foi escolhido por Yavanna, a Valar da natureza.</li>
+        <li>Na trilogia <em>O Hobbit</em>, aparece com trenó puxado por coelhos gigantes.</li>
+        <li>Alguns acreditam que ele se perdeu em sua missão, outros que cumpriu seu papel silenciosamente.</li>
+      </ul>
+    </section>
+
+    <button id="radagastButton">Ouvir mensagem de Radagast</button>
+    <p id="radagastResult"></p>
+
+    <nav>
+      <a href="magos.html">⬅️ Voltar para Magos</a>
+      <a href="index.html">🏠 Portal da Terra Média</a>
+    </nav>
+  </main>
+
+  <script>
+    document.getElementById("radagastButton").addEventListener("click", function() {
+      const mensagens = [
+        "Protejam os esquilos... eles sabem mais do que parecem!",
+        "A floresta fala, se você souber escutar.",
+        "Nem tudo que é pequeno é insignificante.",
+        "O mundo natural é mais sábio do que os homens imaginam.",
+        "Os coelhos correm mais rápido que a sombra de Sauron!"
+      ];
+      const resultado = mensagens[Math.floor(Math.random() * mensagens.length)];
+      document.getElementById("radagastResult").textContent = resultado;
+    });
+  </script>
+</body>
+</html>

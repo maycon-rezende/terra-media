@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pallando – O Mago Azul</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imagens/pallando.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e6f8;
+      font-family: 'Garamond', serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 50, 0.7);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      color: #87cefa;
+      text-shadow: 0 0 10px #000, 0 0 20px #4682b4;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+    }
+
+    h2, h3 {
+      color: #add8e6;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🔮 ";
+      margin-right: 5px;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #cce6ff;
+      border-left: 4px solid #4682b4;
+      padding-left: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 10px 20px;
+      background-color: #4169e1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5f9ea0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #add8e6;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <main>
+    <h1>Pallando</h1>
+    <h2>O Mago Azul</h2>
+
+    <section>
+      <p>Pallando foi o companheiro de Alatar na jornada ao leste da Terra Média. Enviado pelos Valar, sua missão era combater as forças sombrias que se espalhavam longe dos olhos do oeste. Embora sua história seja envolta em silêncio, muitos acreditam que ele teve papel essencial na contenção do mal em terras desconhecidas.</p>
+    </section>
+
+    <section>
+      <h3>🌌 Mistério e Magia</h3>
+      <p>Assim como Alatar, Pallando não aparece nos grandes eventos registrados pelos elfos ou homens. Sua magia pode ter sido usada para fundar ordens secretas, guiar povos esquecidos ou impedir cultos dedicados a Morgoth.</p>
+    </section>
+
+    <section>
+      <h3>📜 Citação</h3>
+      <blockquote>“Nem toda luz brilha no oeste. Há esperança onde ninguém olha.”</blockquote>
+    </section>
+
+    <section>
+      <h3>✨ Curiosidades</h3>
+      <ul>
+        <li>Seu nome pode significar “aquele que viaja longe”.</li>
+        <li>Foi enviado com Alatar, formando uma dupla inseparável.</li>
+        <li>Algumas versões sugerem que ele permaneceu no leste até o fim da Terceira Era.</li>
+        <li>É mencionado apenas em textos como <em>Contos Inacabados</em> e notas de Tolkien.</li>
+      </ul>
+    </section>
+
+    <button id="pallandoButton">Ouvir sussurro de Pallando</button>
+    <p id="pallandoResult"></p>
+
+    <nav>
+      <a href="magos.html">⬅️ Voltar para Magos</a>
+      <a href="index.html">🏠 Portal da Terra Média</a>
+    </nav>
+  </main>
+
+  <script>
+    document.getElementById("pallandoButton").addEventListener("click", function() {
+      const frases = [
+        "O leste guarda segredos que nem os Valar ousam nomear.",
+        "A esperança caminha em silêncio.",
+        "O tempo não apaga o que foi feito nas sombras.",
+        "A luz azul guia os esquecidos.",
+        "O mundo é maior do que os mapas mostram."
+      ];
+      const resultado = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById("pallandoResult").textContent = resultado;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eira Elenwë — A Espadachim Prateada</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('imagens/eira-elenwe-1.png') center center / cover no-repeat fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-color: #0f172a;
+      color: #e0e1dd;
+      font-family: 'Cinzel', serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    header {
+      background-color: rgba(74, 20, 140, 0.5);
+      /* roxo com 50% de opacidade */
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+    }
+
+    .galeria {
+      background-color: rgba(0, 0, 0, 0.4);
+      /* fundo translúcido */
+      backdrop-filter: blur(6px);
+      /* efeito de vidro mágico */
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .titulo-pagina {
+      font-size: 3em;
+      margin: 0;
+
+    }
+
+    .subtitulo-pagina {
+      font-size: 1.5em;
+      font-style: italic;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #ba68c8;
+    }
+
+    section p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .galeria {
+      text-align: center;
+    }
+
+    .carrossel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .carrossel img {
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    }
+
+    button {
+      background-color: #8e24aa;
+      color: white;
+      font-size: 1.5em;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .habilidades-lunares {
+      position: relative;
+      padding: 40px;
+      background: radial-gradient(circle, #ede7f6 0%, #d1c4e9 100%);
+      border-radius: 18px;
+      box-shadow: 0 0 14px rgba(255, 255, 255, 0.3);
+      margin: 60px auto;
+      max-width: 800px;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .habilidades-lunares h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #6a1b9a;
+      text-shadow: 0 0 10px #ba68c8;
+      margin-bottom: 25px;
+      animation: brilharTitulo 3s infinite;
+    }
+
+    @keyframes brilharTitulo {
+      50% {
+        text-shadow: 0 0 18px #ce93d8;
+      }
+    }
+
+    .poderes {
+      list-style-type: '✨ ';
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #4a148c;
+      padding-left: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .nevoa-lunar {
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+      animation: girarNevoa 30s linear infinite;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    @keyframes girarNevoa {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .botao-voltar {
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .botao-voltar a {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1.2em;
+      color: #fff;
+      background: linear-gradient(90deg, #6a1b9a, #ba68c8);
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(106, 27, 154, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .botao-voltar a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px rgba(186, 104, 200, 0.8);
+    }
+
+    .luiniel {
+      background: linear-gradient(to right, #e6f0ff, #f9f9ff);
+      border-left: 5px solid #c0c0f5;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(173, 216, 230, 0.5);
+      animation: brilho 6s ease-in-out infinite;
+    }
+
+    @keyframes brilho {
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba(173, 216, 230, 0.2);
+      }
+
+      50% {
+        box-shadow: 0 0 25px rgba(173, 216, 230, 0.6);
+      }
+    }
+
+    .timeline-eira ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .timeline-eira li {
+      background-color: #f0f8ff;
+      margin: 10px 0;
+      padding: 12px;
+      border-left: 4px solid #a3bff1;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .timeline-eira li:hover {
+      transform: scale(1.03);
+    }
+
+    section {
+      position: relative;
+      border: 1px solid #dedede;
+      padding: 20px;
+      background-color: #fff;
+      animation: respira 10s infinite ease-in-out;
+    }
+
+    @keyframes respira {
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba(180, 180, 255, 0.2);
+      }
+
+      50% {
+        box-shadow: 0 0 15px rgba(180, 180, 255, 0.5);
+      }
+    }
+
+    .legado-eira {
+      font-style: italic;
+      text-align: center;
+      background: radial-gradient(circle at center, #eef2ff, #d4e1ff);
+      padding: 30px;
+      margin-top: 40px;
+      border-top: 3px dashed #c0d0ff;
+    }
+
+    #fundo-lunar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      background-color: transparent;
+      pointer-events: none;
+    }
+
+    .pergaminho {
+      background: url('imagens/pergaminho-textura.png') center center / cover no-repeat;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 18px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(186, 104, 200, 0.3);
+      backdrop-filter: blur(6px);
+      animation: revelarPergaminho 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes revelarPergaminho {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .pergaminho h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2em;
+      color: #e1bee7;
+      text-shadow: 0 0 10px #ba68c8;
+      margin-bottom: 20px;
+    }
+
+    .pergaminho p,
+    .pergaminho ul {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #f3e5f5;
+    }
+
+    .pergaminho ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .pergaminho ul li::before {
+      content: '✨ ';
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<canvas id="fundo-lunar"
+  style="pointer-events:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:0;"></canvas>
+
+<audio autoplay loop hidden>
+  <source src="audio/eira.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<header>
+  <h1 class="titulo-pagina">🌙 Eira Elenwë</h1>
+  <p class="subtitulo-pagina">A Elfa da Lua</p>
+</header>
+<div class="pergaminho">
+  <h2>🕯️ Origem & Propósito</h2>
+  <p>Nascida sob a bênção de Galadriel, Eira carrega em si a memória das Árvores de Valinor, e a melodia dos ventos
+    lunares. Elenwë, seu nome secreto, foi sussurrado pelos rios de Lothlórien quando a lua estava cheia....</p>
+</div>
+<div class="pergaminho">
+  <h2>🌙 Eira Elenwë — A Elfa da Lua</h2>
+  <p>“Se o mundo se calar, eu serei o eco das estrelas.” — Eira</p>
+</div>
+<div class="pergaminho">
+  <h2>🌙 Habilidades Especiais</h2>
+  <ul>
+    <li><strong>Espadachim Exímia:</strong> Treinada por elfos antigos de Lothlórien e Rivendell.</li>
+    <li><strong>Arqueira Silenciosa:</strong> Consegue abater alvos em movimento sem ser percebida.</li>
+    <li><strong>Conexão Lunar:</strong> Em noites de lua cheia, seus poderes se ampliam e vislumbres do futuro lhe
+      surgem em sonhos.</li>
+    <li><strong>Magia Lunar Menor:</strong> Cria ilusões de luz e se camufla entre sombras com encantamentos lunares.
+    </li>
+  </ul>
+</div>
+<div class="pergaminho">
+  <h2>🗡️ Luiniel — A Lâmina Lunar</h2>
+  <p>Forjada com prata élfica encantada, Luiniel reflete a luz da lua e revela runas secretas sob forte emoção. Com
+    Eira, ela pulsa como uma extensão da alma.</p>
+</div>
+<div class="pergaminho">
+  <h2>🌒 Jornada de Eira</h2>
+  <ul>
+    <li>🌙 Nascimento em Lothlórien</li>
+    <li>🗡️ Treinamento élfico</li>
+    <li>🩵 Resgate de Lyra</li>
+    <li>🕯️ Encontro com Noada</li>
+    <li>🛡️ Batalhas lunares</li>
+  </ul>
+</div>
+<div class="pergaminho">
+  <h2>🌌 Legado & Destino</h2>
+  <p>“Seu nome ressoa nos sonhos dos elfos jovens. Seu caminho ainda se desenha sob a lua.”</p>
+</div>
+<section class="galeria">
+  <h2>✨ Galeria Mística</h2>
+  <div class="carrossel">
+    <button id="voltar">⟵</button>
+    <img id="imagem-carrossel" src="imagens/eira-6.png" alt="Eira" />
+    <button id="avancar">⟶</button>
+  </div>
+
+  <div class="botao-voltar">
+    <a href="terra-media.html">← Retornar à Terra Média</a>
+  </div>
+
+  <footer>
+    <p>“Se o mundo se calar, eu serei o eco das estrelas.” — Eira</p>
+  </footer>
+
+  <script>
+    const imagens = [
+      'imagens/eira-elenwe.png',
+      'imagens/eira-elenwë.png',
+      'imagens/eira-elenwe-2.png',
+      'imagens/eira-7.png',
+      'imagens/eira-5.png',
+      'imagens/eira-3.png',
+      'imagens/eira-2.png',
+      'imagens/eira-6.png',
+      'imagens/eira-4.png'
+    ];
+
+    let atual = 0;
+    const imagem = document.getElementById('imagem-carrossel');
+    const avancar = document.getElementById('avancar');
+    const voltar = document.getElementById('voltar');
+
+    avancar.addEventListener('click', () => {
+      atual = (atual + 1) % imagens.length;
+      imagem.src = imagens[atual];
+    });
+
+    voltar.addEventListener('click', () => {
+      atual = (atual - 1 + imagens.length) % imagens.length;
+      imagem.src = imagens[atual];
+    });
+
+  </script>
+  <script>
+    const canvas = document.getElementById('fundo-lunar');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let luas = [];
+
+    for (let i = 0; i < 100; i++) {
+      luas.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        d: Math.random() * 50
+      });
+    }
+
+    function drawLuas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(240, 240, 255, 0.7)';
+      for (let i = 0; i < luas.length; i++) {
+        let p = luas[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
+        ctx.fill();
+      }
+      moveLuas();
+    }
+
+    let angle = 0;
+
+    function moveLuas() {
+      angle += 0.01;
+      for (let i = 0; i < luas.length; i++) {
+        let p = luas[i];
+        p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+        p.x += Math.sin(angle) * 2;
+
+        if (p.x > canvas.width || p.y > canvas.height) {
+          p.x = Math.random() * canvas.width;
+          p.y = -10;
+        }
+      }
+    }
+
+    setInterval(drawLuas, 33);
+  </script>
+
+  </body>
+
+</html>

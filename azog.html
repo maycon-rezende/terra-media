@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Azog – O Profano</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imagens/azog.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6d2;
+      font-family: 'Garamond', serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+      position: flex;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
+
+    h1, h2, h3 {
+      text-shadow: 2px 2px 4px #000;
+      color: #d4af37;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "⚔️ ";
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #ccc;
+      border-left: 4px solid #888;
+      padding-left: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 10px 20px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #666;
+    }
+
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: url('https://i.imgur.com/8QfQZkY.png') repeat;
+      opacity: 0.1;
+      animation: drift 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="fog"></div>
+  <main>
+    <h1>Azog</h1>
+    <h2>O Profano</h2>
+
+    <section>
+      <p>Azog foi um dos orcs mais cruéis da Terceira Era. Conhecido por sua brutalidade e ódio aos anões, ele assassinou o rei Thrór e iniciou uma guerra sangrenta entre os povos das montanhas e os exércitos de Dol Guldur.</p>
+    </section>
+
+    <section>
+      <h3>🩸 A Guerra de Azanulbizar</h3>
+      <p>Após matar Thrór, Azog provocou a ira dos anões, que marcharam para Moria em busca de vingança. A batalha foi sangrenta, e embora os anões tenham vencido, Azog sobreviveu — até ser morto por Dáin Pé-de-Ferro.</p>
+    </section>
+
+    <section>
+      <h3>👹 Azog no cinema</h3>
+      <p>Na trilogia <em>O Hobbit</em>, Azog é retratado como o principal antagonista, liderando os orcs contra Thorin e sua companhia. Embora já estivesse morto nos livros, sua presença foi ampliada para intensificar o conflito.</p>
+    </section>
+
+    <section>
+      <h3>📜 Citação</h3>
+      <blockquote>“Azog, o Profano, não descansará até ver os anões exterminados.”</blockquote>
+    </section>
+
+    <section>
+      <h3>✨ Curiosidades</h3>
+      <ul>
+        <li>Azog era pai de Bolg, que liderou os orcs na Batalha dos Cinco Exércitos.</li>
+        <li>Seu nome significa “desprezo” em línguas negras.</li>
+        <li>Foi um dos poucos orcs a liderar exércitos com estratégia e comando direto.</li>
+        <li>Seu braço foi decepado por Thorin, e substituído por uma lâmina cruel.</li>
+      </ul>
+    </section>
+
+    <button id="azogButton">Ouvir ameaça de Azog</button>
+    <p id="azogResult"></p>
+  </main>
+
+  <script>
+    document.getElementById("azogButton").addEventListener("click", function() {
+      const threats = [
+        "Eu destruirei cada descendente de Durin!",
+        "A Montanha Solitária será tomada pelo sangue!",
+        "Os anões cairão diante da lâmina de Azog!",
+        "Dol Guldur marcha sob minha ordem!",
+        "Vocês não escaparão da fúria do Profano!"
+      ];
+      const result = threats[Math.floor(Math.random() * threats.length)];
+      document.getElementById("azogResult").textContent = result;
+    });
+  </script>
+</body>
+</html>

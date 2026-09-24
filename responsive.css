@@ -1,0 +1,71 @@
+/* Camada responsiva compartilhada — carregada após os estilos de cada página. */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 0; overflow-x: hidden; }
+img, video, iframe, canvas { max-width: 100%; height: auto; }
+input, button, textarea, select { max-width: 100%; font: inherit; }
+
+main, .container, .content, .content-wrapper, .profile-container,
+.page-container, .story-container, .timeline-container, .section,
+.map-container, .ultimas-noticias, .tradicoes-costumes,
+.citacoes-memoraveis, .explore-eras, #historia {
+  width: min(100% - 2rem, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1440px) {
+  body { font-size: 18px; }
+  main, .container, .content, .content-wrapper, .profile-container,
+  .page-container, .story-container, .timeline-container, .section {
+    width: min(100% - 4rem, 1280px);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav { width: calc(100% - 1.5rem); max-width: 680px; padding: .65rem .9rem; }
+  .nav-links { justify-content: center; flex-wrap: wrap; gap: .55rem 1rem; }
+  .nav-links a { font-size: .9rem; }
+  .header { min-height: 100svh; height: auto; padding: 7rem 1.25rem 3rem; }
+  .title { font-size: clamp(2.25rem, 8vw, 4rem); }
+  .subtitle { font-size: clamp(1.05rem, 3vw, 1.5rem); }
+  .p2 { position: static !important; }
+  .map-regions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-content, .profile, .profile-content, .character-content, .couple-content, .story-content { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; background-attachment: scroll; }
+  main, .container, .content, .content-wrapper, .profile-container,
+  .page-container, .story-container, .timeline-container, .section,
+  .map-container, .ultimas-noticias, .tradicoes-costumes,
+  .citacoes-memoraveis, .explore-eras, #historia {
+    width: calc(100% - 1.25rem); padding-left: 1rem; padding-right: 1rem;
+  }
+  main { margin-top: 1.25rem; margin-bottom: 1.25rem; }
+  h1 { font-size: clamp(1.8rem, 9vw, 2.5rem) !important; }
+  h2, .section-title { font-size: clamp(1.5rem, 7vw, 2rem) !important; }
+  h3 { font-size: clamp(1.15rem, 5vw, 1.45rem); }
+  p, li { overflow-wrap: anywhere; }
+  .nav { top: .5rem; width: calc(100% - 1rem); border-radius: 16px; }
+  .nav:hover { transform: translateX(-50%); }
+  .nav-links { gap: .35rem .75rem; }
+  .nav-links a { font-size: .78rem; white-space: nowrap; }
+  .header { padding: 8.5rem 1rem 2.5rem; }
+  .ring { width: 88px; height: 88px; border-width: 6px; margin: 1.25rem auto; }
+  .section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .card-grid, .map-regions, .grid { grid-template-columns: 1fr !important; }
+  .characters, .casais-container { gap: 1rem; }
+  .character { width: 120px; height: 120px; }
+  .card, .casal-card, .region { width: 100% !important; }
+  .casal-card { max-width: 320px; }
+  .profile-image, .character-image, .hero-image, .couple-image,
+  .profile img, .hero img { width: min(100%, 280px) !important; min-width: 0 !important; }
+  .profile-content, .character-content, .hero-content, .couple-content, .story-content { flex-direction: column; align-items: center; }
+  button, .explore-button, .botao-viloes { min-height: 44px; }
+  .footer { padding: 2rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

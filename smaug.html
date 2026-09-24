@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Smaug – O Último Grande Dragão</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imagens/smaug.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fcebd5;
+      font-family: 'Garamond', serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      color: #ff4500;
+      text-shadow: 0 0 10px #000, 0 0 20px #ff6347;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+    }
+
+    h2, h3 {
+      color: #ffa07a;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🔥 ";
+      margin-right: 5px;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #fddbb0;
+      border-left: 4px solid #ff4500;
+      padding-left: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 10px 20px;
+      background-color: #8b0000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #a52a2a;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #ffa07a;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <main>
+    <h1>Smaug</h1>
+    <h2>O Último Grande Dragão</h2>
+
+    <section>
+      <p>Smaug foi o último dos grandes dragões da Terra Média. Criado por Morgoth, ele sobreviveu até a Terceira Era, quando atacou a Montanha Solitária e expulsou os anões de Erebor, tomando posse de seu tesouro.</p>
+    </section>
+
+    <section>
+      <h3>🪙 A Tomada de Erebor</h3>
+      <p>Com fogo e fúria, Smaug destruiu a cidade de Dale e se instalou em Erebor, dormindo sobre uma montanha de ouro e joias. Seu domínio durou mais de 150 anos.</p>
+    </section>
+
+    <section>
+      <h3>🏹 A Queda</h3>
+      <p>Durante os eventos de <em>O Hobbit</em>, Smaug é despertado por Bilbo Bolseiro. Enfurecido, ataca Esgaroth, mas é morto por Bard, o arqueiro, com uma flecha negra que acerta seu ponto fraco.</p>
+    </section>
+
+    <section>
+      <h3>📜 Citação</h3>
+      <blockquote>“Eu sou fogo... Eu sou morte!”</blockquote>
+    </section>
+
+    <section>
+      <h3>✨ Curiosidades</h3>
+      <ul>
+        <li>Smaug era um dragão alado, com escamas vermelhas e olhos dourados.</li>
+        <li>Seu ponto fraco era uma pequena falha na couraça do lado esquerdo.</li>
+        <li>Falava com inteligência e sarcasmo, especialmente com Bilbo.</li>
+        <li>Seu rugido podia ser ouvido a quilômetros de distância.</li>
+      </ul>
+    </section>
+
+    <button id="smaugButton">Ouvir rugido de Smaug</button>
+    <p id="smaugResult"></p>
+
+    <nav>
+      <a href="viloes.html">⬅️ Voltar para Vilões</a>
+      <a href="index.html">🏠 Portal da Terra Média</a>
+    </nav>
+  </main>
+
+  <script>
+    document.getElementById("smaugButton").addEventListener("click", function() {
+      const roars = [
+        "EU SOU FOGO!",
+        "EU SOU MORTE!",
+        "Ninguém rouba de Smaug impunemente!",
+        "Vocês ousam me desafiar?",
+        "O ouro é meu... e só meu!"
+      ];
+      const result = roars[Math.floor(Math.random() * roars.length)];
+      document.getElementById("smaugResult").textContent = result;
+    });
+  </script>
+</body>
+</html>

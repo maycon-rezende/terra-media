@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>O Condado | Terra Média</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #fdf6e3, #dff0d8);
+    color: #4a4a2e;
+  }
+
+   body {
+      background-image: url('imagens/condado.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Cinzel', serif;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.3em;
+  }
+
+  header p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+
+  main {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+
+  section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffffcc;
+    border-left: 5px solid #a2cfa2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: #6b8e23;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+
+  button {
+    background-color: #6b8e23;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #8fbc8f;
+  }
+
+  #citacao {
+    margin-top: 15px;
+    font-style: italic;
+    display: none;
+    color: #4a4a2e;
+    border-left: 3px solid #a2cfa2;
+    padding-left: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #6b8e23;
+    color: #fdf6e3;
+    font-size: 0.9em;
+  }
+
+  footer a {
+    color: #fffacd;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <header>
+    <h1>🌾 O Condado</h1>
+    <p>Terra dos hobbits, onde a simplicidade reina e cada dia é uma celebração da vida.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>📜 História</h2>
+      <p>Fundado por hobbits vindos de Bree, o Condado é dividido em quatro regiões: Bolsão, Tuklândia, Terras do Oeste e Folde do Sul.</p>
+    </section>
+
+    <section>
+      <h2>🏡 Locais Importantes</h2>
+      <ul>
+        <li>Bolsão – lar de Bilbo e Frodo</li>
+        <li>Ponte do Brandevin</li>
+        <li>Campo dos Festivais</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 Curiosidades</h2>
+      <p>Hobbits adoram festas, jardinagem e refeições (especialmente o segundo café da manhã!).</p>
+      <button onclick="mostrarCita()">Ver citação épica</button>
+      <p id="citacao" class="oculto">“É perigoso sair pela porta. Você pisa na estrada e se não controlar seus pés, não sabe até onde será levado.” – Bilbo</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>✨ Terra Média - Um mundo criado por J.R.R. Tolkien ✨</p>
+    <a href="terra-media.html">← Voltar para a Terra Média</a>
+  </footer>
+
+ <script>
+  function mostrarCita() {
+    const cita = document.getElementById("citacao");
+    cita.style.display = "block";
+  }
+</script>
+
+</body>
+</html>

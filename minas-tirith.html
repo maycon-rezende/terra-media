@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Minas Tirith | Terra Média</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('imagens/minas.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Cinzel', serif;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.65);
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 900px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      border: 1px solid #ccc;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    button.voltar {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      border: 2px solid #bdc3c7;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.voltar:hover {
+      background-color: #34495e;
+    }
+
+    .citacao {
+      font-style: italic;
+      text-align: center;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .citacao.mostrar {
+      opacity: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    thead {
+      background-color: rgba(255,255,255,0.2);
+    }
+
+    .timeline div {
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 8px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .timeline div:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏰 Minas Tirith</h1>
+
+   <section>
+  <h2>📜 História Completa</h2>
+  <p>
+    Originalmente chamada <strong>Minas Anor</strong>, a “Torre do Sol”, foi fundada em 3320 da Segunda Era por <strong>Anárion</strong>, filho de Elendil e irmão de Isildur. Após a queda de sua cidade irmã <em>Minas Ithil</em> para os Nazgûl, passou a se chamar <strong>Minas Tirith</strong>, a “Torre da Guarda”, como símbolo de resistência contra Mordor.
+  </p>
+  <p>
+    Durante séculos, foi governada pelos descendentes de Anárion, até que o último rei, <strong>Eärnur</strong>, desapareceu em combate contra o Rei-Bruxo de Angmar. Sem herdeiros, Gondor passou a ser liderada por <strongRegentes>, como Denethor II, até o retorno do rei legítimo.
+  </p>
+  <p>
+    Na <strong>Guerra do Anel</strong>, Minas Tirith foi sitiada pelas forças de Sauron após a queda de Osgiliath. A <strong>Batalha dos Campos de Pelennor</strong> foi travada diante de seus portões, com a chegada dos <em>Rohirrim</em> liderados por Théoden e, mais tarde, <strong>Aragorn</strong>, herdeiro de Isildur, que trouxe reforços pelo rio Anduin.
+  </p>
+  <p>
+    O <strong>Rei-Bruxo de Angmar</strong> liderou o ataque com trolls, orcs, Haradrim e olifantes. Após a quebra do portão com o aríete <em>Grond</em>, Gandalf enfrentou o Rei-Bruxo, mas foi interrompido pela chegada dos aliados. A vitória foi conquistada com grandes perdas, e Aragorn foi coroado como <strong>Rei Elessar</strong>, restaurando a linhagem real de Gondor.
+  </p>
+  <p>
+    Na Quarta Era, os <strong>Anões de Durin</strong> reforçaram as portas com <em>mithril</em>, e os <strong>Elfos</strong> plantaram árvores, tornando Minas Tirith uma cidade ainda mais majestosa.
+  </p>
+</section>
+
+
+    <section>
+      <h2>🏙️ Locais Importantes</h2>
+      <ul>
+        <li>Salão do Trono</li>
+        <li>Biblioteca Real</li>
+        <li>Árvore Branca de Gondor</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 Curiosidades</h2>
+      <p>Possui sete níveis conectados por portões. A muralha externa resistiu ao ataque de Grond, o aríete de Mordor.</p>
+    </section>
+
+    <section>
+      <h2>📅 Linha do Tempo de Minas Tirith</h2>
+      <div class="timeline">
+        <div onclick="alert('Fundação por Anárion após a queda de Númenor')">🟢 3320 S.E. – Fundação como Minas Anor</div>
+        <div onclick="alert('Mudança da corte real para Minas Anor')">🟡 1640 T.E. – Tarondor estabelece a Casa do Rei</div>
+        <div onclick="alert('Minas Ithil capturada pelos Nazgûl')">🔴 2002 T.E. – Renomeada como Minas Tirith</div>
+        <div onclick="alert('Último rei Eärnur desaparece após duelo com o Rei-Bruxo')">⚫ 2050 T.E. – Início da era dos Regentes</div>
+        <div onclick="alert('Batalha dos Campos de Pelennor e retorno do Rei')">🟣 3019 T.E. – Aragorn é coroado Rei Elessar</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>👑 Reis e Regentes de Gondor</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Título</th>
+            <th>Período</th>
+            <th>Fato Marcante</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anárion</td>
+            <td>Rei</td>
+            <td>3320 S.E.</td>
+            <td>Fundador de Minas Anor</td>
+          </tr>
+          <tr>
+            <td>Tarondor</td>
+            <td>Rei</td>
+            <td>1640 T.E.</td>
+            <td>Transferiu a Casa do Rei</td>
+          </tr>
+          <tr>
+            <td>Eärnur</td>
+            <td>Último Rei</td>
+            <td>2043–2050 T.E.</td>
+            <td>Desapareceu após enfrentar o Rei-Bruxo</td>
+          </tr>
+          <tr>
+            <td>Denethor II</td>
+            <td>Regente</td>
+            <td>2984–3019 T.E.</td>
+            <td>Usou o palantír e caiu em desespero</td>
+          </tr>
+          <tr>
+            <td>Aragorn (Elessar)</td>
+            <td>Rei</td>
+            <td>3019 T.E. em diante</td>
+            <td>Restaurou a linhagem real</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <button onclick="mostrarCitacao()">✨ Ver citação épica</button>
+    <p class="citacao" id="citacao">“Este dia não será o fim! Este dia nós lutamos!” – Aragorn</p>
+
+    <button class="voltar" onclick="voltarParaTerraMedia()">← Voltar para a Terra Média</button>
+  </div>
+
+  <script>
+    function voltarParaTerraMedia() {
+      window.location.href = 'terra-media.html';
+    }
+
+    function mostrarCitacao() {
+      document.getElementById('citacao').classList.add('mostrar');
+    }
+  </script>
+</body>
+</html>

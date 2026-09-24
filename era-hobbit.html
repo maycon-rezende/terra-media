@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Era de O Hobbit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('era-hobbit-bg.jpg') no-repeat center top scroll;
+      background-size: cover;
+      font-family: 'Georgia', serif;
+      color: #f0e6d2;
+      min-height: 100vh;
+    }
+
+    main {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 40px;
+      max-width: 1000px;
+      margin: 60px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #d4af37;
+      text-shadow: 2px 2px 4px #000;
+      font-family: 'Cinzel', serif;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: rgba(46, 46, 46, 0.9);
+      color: #f4a460;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .card span {
+      display: block;
+      margin-top: 8px;
+      font-weight: normal;
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    .card:hover {
+      background-color: #444;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #d4af37;
+    }
+
+    button {
+      display: block;
+      margin: 40px auto 10px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #f4a460;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    #mensagem {
+      text-align: center;
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      background-color: #2e2e2e;
+      color: #f4a460;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    .invisivel {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .visivel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .linha-do-tempo {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(20, 20, 20, 0.7);
+  border-left: 4px solid #d4af37;
+  border-radius: 10px;
+}
+
+.linha-do-tempo h2 {
+  text-align: center;
+  font-size: 2.2em;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+
+.evento {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-bottom: 1px solid #555;
+  transition: transform 0.3s ease;
+}
+
+.evento:hover {
+  transform: scale(1.02);
+  background-color: rgba(40, 40, 40, 0.6);
+  box-shadow: 0 0 10px #d4af37;
+}
+
+.evento h3 a {
+  font-size: 1.5em;
+  color: #f4a460;
+  text-decoration: none;
+}
+
+.evento h3 a:hover {
+  text-decoration: underline;
+}
+
+.evento p {
+  font-size: 1.1em;
+  color: #ccc;
+}
+
+.evento p a {
+  color: #98fb98;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.evento p a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <main>
+    <h1>🍃 Era de O Hobbit</h1>
+    <p>Antes da Guerra do Anel, Bilbo Bolseiro embarcou em uma jornada inesperada ao lado de treze anões e um mago. A missão: recuperar Erebor das garras do dragão Smaug. Essa aventura mudou o destino da Terra Média e plantou as sementes para os eventos da Terceira Era.</p>
+<section class="eventos">
+  <h2>📖 Contexto Histórico da Era</h2>
+  <p>A história de <strong>O Hobbit</strong> se passa na Terceira Era da Terra Média, cerca de 60 anos antes dos eventos de <em>O Senhor dos Anéis</em>. É um período de relativa paz, mas com sombras crescentes no leste. O dragão <strong>Smaug</strong> domina Erebor, expulsando os anões de seu lar ancestral. Enquanto isso, <strong>Sauron</strong> começa a se fortalecer secretamente em Dol Guldur, na Floresta das Trevas.</p>
+</section>
+
+<section>
+  <h2>⚔️ Conflitos e Batalhas</h2>
+  <p>O clímax da jornada é a <strong>Batalha dos Cinco Exércitos</strong>, travada aos pés da Montanha Solitária. Os exércitos dos anões, elfos e homens enfrentam uma horda de orcs e wargs vindos das Montanhas Sombrias. A batalha marca o fim da ameaça de Smaug e o início da reconstrução de Erebor, mas também resulta na morte de <strong>Thorin</strong>, <strong>Fíli</strong> e <strong>Kíli</strong>.</p>
+</section>
+
+<section class="eventos">
+  <h2>🗺️ Locais Importantes</h2>
+  <ul>
+    <li><strong>Condado</strong> – lar de Bilbo Bolseiro, símbolo da simplicidade e paz</li>
+    <li><strong>Erebor</strong> – a Montanha Solitária, reino perdido dos anões</li>
+    <li><strong>Valfenda</strong> – refúgio élfico liderado por Elrond</li>
+    <li><strong>Floresta das Trevas</strong> – lar dos elfos silvestres e domínio de Dol Guldur</li>
+    <li><strong>Cidade do Lago</strong> – povoado humano às margens do Lago Longo</li>
+    <li><strong>Montanhas Sombrias</strong> – território hostil dominado por goblins e orcs</li>
+  </ul>
+</section>
+
+<section class="eventos">
+  <h2>🧙 Personagens Chave</h2>
+  <ul>
+    <li><strong>Bilbo Bolseiro</strong> – o ladrão relutante que encontra o Um Anel</li>
+    <li><strong>Thorin Escudo de Carvalho</strong> – herdeiro de Erebor e líder da companhia</li>
+    <li><strong>Gandalf</strong> – o mago cinzento que guia a jornada</li>
+    <li><strong>Smaug</strong> – o dragão que guarda o tesouro dos anões</li>
+    <li><strong>Bardo</strong> – arqueiro da Cidade do Lago que derrota Smaug</li>
+    <li><strong>Thranduil</strong> – rei dos elfos da Floresta das Trevas</li>
+  </ul>
+</section>
+<section class="linha-do-tempo">
+  <h2>🕰️ Linha do Tempo da Jornada</h2>
+
+  <div class="evento">
+    <h3><a href="bilbo.html">📍 Bolsão, Condado</a></h3>
+    <p>Bilbo Bolseiro recebe a inesperada visita de <a href="gandalf.html">Gandalf</a> e treze anões. A jornada começa com um contrato e um mapa misterioso.</p>
+  </div>
+
+  <div class="evento">
+    <h3><a href="gollum.html">🪓 Montanhas Sombrias</a></h3>
+    <p>O grupo enfrenta trolls e goblins. Bilbo se perde nas cavernas e encontra <strong>Gollum</strong>, ganhando o <strong>Um Anel</strong> após um duelo de charadas.</p>
+  </div>
+
+  <div class="evento">
+    <h3><a href="thranduil.html">🌲 Floresta das Trevas</a></h3>
+    <p>Capturados pelos elfos silvestres liderados por <strong>Thranduil</strong>, os anões são libertados por Bilbo usando barris flutuantes.</p>
+  </div>
+
+  <div class="evento">
+    <h3><a href="bardo.html">🏞️ Cidade do Lago</a></h3>
+    <p>Recebidos como heróis, os anões partem rumo à Montanha Solitária. <strong>Bardo</strong>, o arqueiro, observa os sinais do retorno de <a href="smaug.html">Smaug</a>.</p>
+  </div>
+
+  <div class="evento">
+    <h3><a href="smaug.html">🔥 Erebor e Smaug</a></h3>
+    <p>Bilbo confronta o dragão e descobre seu ponto fraco. Smaug ataca a Cidade do Lago, mas é derrotado por Bardo com uma flecha negra.</p>
+  </div>
+
+  <div class="evento">
+    <h3><a href="batalha.html">⚔️ Batalha dos Cinco Exércitos</a></h3>
+    <p>Elfos, homens e anões enfrentam orcs e wargs. <a href="thorin.html">Thorin</a>, <a href="fili.html">Fíli</a> e <a href="kili.html">Kíli</a> tombam em combate. Bilbo retorna ao Condado com o Um Anel.</p>
+  </div>
+</section>
+
+    <section>
+      <h2>⛏️ Thorin e Sua Companhia</h2>
+      <div class="grid">
+        <a href="thorin.html" class="card">🪖 Thorin<br><span>líder determinado</span></a>
+        <a href="balin.html" class="card">⛏️ Balin<br><span>o ancião</span></a>
+        <a href="dwalin.html" class="card">🪓 Dwalin<br><span>guerreiro robusto</span></a>
+        <a href="fili.html" class="card">🪓 Fíli<br><span>nobre jovem</span></a>
+        <a href="kili.html" class="card">🏹 Kíli<br><span>arqueiro destemido</span></a>
+        <a href="dori.html" class="card">⛏️ Dori<br><span>digno e forte</span></a>
+        <a href="nori.html" class="card">🪖 Nori<br><span>engenhoso</span></a>
+        <a href="oin.html" class="card">🪓 Óin<br><span>mestre curandeiro</span></a>
+        <a href="gloin.html" class="card">🪖 Glóin<br><span>contabilista leal</span></a>
+        <a href="bifur.html" class="card">🪓 Bifur<br><span>de poucas palavras</span></a>
+        <a href="bofur.html" class="card">🪓 Bofur<br><span>alegre e amável</span></a>
+        <a href="bombur.html" class="card">🪓 Bombur<br><span>cozinheiro gorducho</span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>🧙 Companheiros da Jornada</h2>
+      <div class="grid">
+        <a href="bilbo.html" class="card">🍃 Bilbo Bolseiro<br><span>o ladrão relutante</span></a>
+        <a href="gandalf.html" class="card">🧝 Gandalf<br><span>o mago cinzento</span></a>
+      </div>
+    </section>
+
+    <button onclick="mostrarMensagem()">📜 Ouvir uma mensagem da jornada</button>
+    <p id="mensagem"></p>
+
+    <nav>
+      <a href="index.html">🏠 Portal da Terra Média</a>
+      <a href="personagens.html">🧝‍♂️ Ver Personagens</a>
+      <a href="dragoes.html">🐉 Ver Dragões</a>
+    </nav>
+
+    <footer>
+      <p>“Eu sou apenas um Bolseiro, e gosto do meu lar.” – Bilbo</p>
+      <p>Feito com 🖤 por Cleide | Inspirado no universo de Tolkien</p>
+    </footer>
+  </main>
+
+  <script>
+    function mostrarMensagem() {
+      const frases = [
+        "Nunca se sabe onde uma jornada inesperada pode levar.",
+        "O dragão dorme... mas por quanto tempo?",
+        "Bilbo encontrou mais do que ouro em Erebor.",
+        "A coragem pode vir em tamanhos pequenos.",
+        "A amizade é o maior tesouro da Terra Média."
+      ];
+      const sorteada = frases[Math.floor(Math.random() * frases.length)];
+      document.getElementById("mensagem").textContent = sorteada;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visivel');
+        }
+      });
+    });
+
+    document.querySelectorAll('.card, section').forEach(el => {
+      el.classList.add('invisivel');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

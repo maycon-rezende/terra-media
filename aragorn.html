@@ -1,250 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Aragorn, Filho de Arathorn</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-  font-family: 'Cinzel', serif;
-  background: linear-gradient(#eceff1, #cfd8dc);
-  color: #263238;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  background: #455a64;
-  color: white;
-  padding: 30px 10px;
-  box-shadow: 0 0 15px #90a4ae;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 5px;
-}
-
-.botao-voltar {
-  display: inline-block;
-  margin-top: 15px;
-  background: #78909c;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.botao-voltar:hover {
-  background: #b0bec5;
-  color: #263238;
-}
-body {
-  font-family: 'Cinzel', serif;
-  background: linear-gradient(#eceff1, #cfd8dc);
-  color: #263238;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  text-align: center;
-  background: #455a64;
-  color: white;
-  padding: 30px 10px;
-  box-shadow: 0 0 15px #90a4ae;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 5px;
-}
-
-.botao-voltar {
-  display: inline-block;
-  margin-top: 15px;
-  background: #78909c;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.botao-voltar:hover {
-  background: #b0bec5;
-  color: #263238;
-}
-
-main {
-  padding: 20px;
-}
-
-section {
-  background: rgba(255,255,255,0.85);
-  border-left: 4px solid #546e7a;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-  border-bottom: 2px dashed #90a4ae;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type: '⚔️ ';
-  padding-left: 20px;
-}
-
-blockquote {
-  font-style: italic;
-  background-color: #cfd8dc;
-  padding: 15px;
-  border-left: 5px solid #37474f;
-  margin: 10px 0;
-}
-.arvore-genealogica {
-  list-style: none;
-  padding-left: 0;
-  font-family: 'Cinzel', serif;
-  text-align: center;
-  line-height: 2.2em;
-  font-size: 1.1em;
-  background: rgba(255,255,255,0.85);
-  border: 2px dashed #78909c;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-.aragorn-imagem {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.aragorn-imagem img {
-  max-width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-
-.aragorn-imagem figcaption {
-  font-style: italic;
-  margin-top: 10px;
-  color: #444;
-}
-
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A trajetória de Aragorn, de Passolargo, patrulheiro do Norte, ao Rei Elessar de Gondor e Arnor.">
+  <title>Aragorn — Do Passolargo ao Rei Elessar | Terra Média</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="aragorn.css">
+  <style>main{width:auto;max-width:none;margin:0;padding:0}</style>
   <script src="access-guard.js"></script>
+  <script src="aragorn.js" defer></script>
 </head>
 <body>
-    <figure class="aragorn-imagem">
-  <img src="https://static.wikia.nocookie.net/lotr/images/5/5c/Aragorn_II_-_Infobox.jpg" alt="Aragorn, Rei Elessar" />
-  <figcaption>Aragorn II, também conhecido como Elessar, Rei de Gondor</figcaption>
-</figure>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <div class="royal-cursor" aria-hidden="true"></div>
+  <nav class="top-nav" aria-label="Navegação principal">
+    <a class="brand" href="terra-media.html">TERRA MÉDIA</a>
+    <div class="nav-links"><a href="personagens.html">Personagens</a><a href="era-sociedade.html">Guerra do Anel</a><a href="aragorn-arwen.html">Aragorn e Arwen</a></div>
+  </nav>
 
-  <header>
-    <h1>⚔️ Aragorn, Filho de Arathorn</h1>
-    <p>Herdeiro de Isildur | Rei Elessar de Gondor</p>
+  <header class="hero" id="topo">
+    <div class="hero-inner">
+      <p class="eyebrow">Herança dos Dúnedain · Terceira Era</p>
+      <h1>Aragorn</h1>
+      <p class="hero-title">Do Passolargo ao Rei Elessar</p>
+      <p class="hero-lead">Muito antes da coroa, ele percorreu as terras ermas como um guardião sem reino. Quando a sombra avançou, escolheu caminhar ao lado dos povos livres.</p>
+      <div class="hero-actions"><a class="button" href="#jornada">Seguir seus passos</a><a class="button ghost" href="personagens.html">Voltar aos personagens</a></div>
+      <span class="scroll-hint" aria-hidden="true">↓ &nbsp; A história começa abaixo</span>
+    </div>
   </header>
 
- <main>
-  <section id="origem">
-    <h2>👑 Origens e Linhagem</h2>
-    <p>Aragorn, filho de Arathorn e Gilraen, nasceu entre os Dúnedain, descendente direto de Elendil e Isildur. Criado em Valfenda sob os cuidados de Elrond, foi chamado de Estel (Esperança) até descobrir sua verdadeira linhagem e destino como herdeiro de Gondor.</p>
-  </section>
-<section id="genealogia">
-  <h2>🌳 Linhagem Real de Aragorn</h2>
-  <p>Aragorn é descendente direto de <strong>Isildur</strong>, filho de <strong>Elendil</strong>, que por sua vez descende de <strong>Elros</strong>, o primeiro Rei de Númenor. Sua linhagem é marcada por coragem, sacrifício e união entre Elfos e Homens.</p>
-
-  <ul class="arvore-genealogica">
-    <li><strong>Thingol</strong> + <strong>Melian</strong> 🌌</li>
-    <li>↓</li>
-    <li><strong>Lúthien</strong> + <strong>Beren</strong> ❤️</li>
-    <li>↓</li>
-    <li><strong>Dior</strong> + <strong>Nimloth</strong></li>
-    <li>↓</li>
-    <li><strong>Elwing</strong> + <strong>Eärendil</strong> ⭐</li>
-    <li>↓</li>
-    <li><strong>Elros</strong> (Rei de Númenor)</li>
-    <li>↓</li>
-    <li><strong>Elendil</strong> + <strong>Isildur</strong> ⚔️</li>
-    <li>↓</li>
-    <li><strong>Aranarth</strong> → 38 gerações de Dúnedain</li>
-    <li>↓</li>
-    <li><strong>Arathorn II</strong> + <strong>Gilraen</strong></li>
-    <li>↓</li>
-    <li><strong>Aragorn II</strong> (Elessar, Rei de Gondor)</li>
-  </ul>
-</section>
-
-  <section id="lideranca">
-    <h2>🛡️ Batalhas & Liderança</h2>
-    <ul>
-      <li><strong>Passolargo:</strong> Viajante e protetor das terras ao norte</li>
-      <li><strong>Sociedade do Anel:</strong> Lutou bravamente ao lado de Frodo</li>
-      <li><strong>Helm's Deep:</strong> Batalha lendária com os Rohirrim</li>
-      <li><strong>Pelennor:</strong> Liderou os homens contra os exércitos de Sauron</li>
-      <li><strong>Portões Negros:</strong> Enfrentou a última resistência</li>
-    </ul>
-  </section>
-
-  <section id="frases">
-    <h2>💬 Frases Memoráveis</h2>
-    <blockquote>”Sou Aragorn, filho de Arathorn. E se pela vida ou pela morte eu puder protegê-lo, eu o farei.”</blockquote>
-    <blockquote>“Sempre há esperança.”</blockquote>
-    <blockquote>“Hoje nós lutamos!”</blockquote>
-    <blockquote>”Et Eärello Endorenna utúlien. Sinomë maruvan ar Hildinyar tenn’ Ambar-metta.”<br>“Do Grande Mar à Terra Média eu vim. Aqui habitarei, e meus herdeiros, até o fim do mundo.”
-
-</blockquote>
-  </section>
-
-  <section id="reinado">
-    <h2>🌄 Reinado de Gondor</h2>
-    <p>Após a derrota de Sauron, Aragorn foi coroado como Elessar, o Rei Restaurado de Gondor. Casou-se com Arwen Undómiel e governou com justiça e sabedoria, unificando os povos livres da Terra Média e trazendo séculos de paz.</p>
-  </section>
-
-  <section id="galeria">
-    <h2>🖼️ Galeria de Aragorn</h2>
-    <ul>
-      <li>⚔️ Como Passolargo nas terras selvagens</li>
-      <li>👑 Coroação em Minas Tirith</li>
-      <li>💍 Casamento com Arwen sob as estrelas</li>
-      <li>🚪 Diante dos Portões Negros</li>
-    </ul>
+  <main>
+    <section class="identity content-width reveal" aria-label="Identidade de Aragorn">
+      <div><span class="eyebrow">O homem por trás da lenda</span><h2>Estel. Passolargo. Elessar.</h2><p>Três nomes para uma vida atravessada por esperança, exílio e dever. Aragorn II, filho de Arathorn II e Gilraen, cresceu em Valfenda sob os cuidados de Elrond. Sua origem foi mantida em segredo até que estivesse pronto para conhecer a própria linhagem.</p></div>
+      <dl class="facts"><div><dt>Povo</dt><dd>Dúnedain do Norte</dd></div><div><dt>Conhecido como</dt><dd>Estel, Passolargo, Elessar</dd></div><div><dt>Herança</dt><dd>Descendente de Isildur</dd></div><div><dt>Companheiros</dt><dd>A Sociedade do Anel</dd></div><div><dt>Reino</dt><dd>Gondor e Arnor reunidos</dd></div><div><dt>Espada</dt><dd>Andúril, a Chama do Oeste</dd></div></dl>
     </section>
-    <a href="terra-media.html" class="botao-voltar">← Voltar à Terra Média</a>
+
+    <section class="story content-width" id="jornada" aria-labelledby="jornada-titulo">
+      <div class="section-heading reveal"><p class="eyebrow">Caminhos de um rei</p><h2 id="jornada-titulo">A jornada de Aragorn</h2><p>Seu destino não começou no trono. Foi construído por décadas de serviço, escolhas difíceis e lealdade.</p></div>
+      <div class="timeline">
+        <article class="chapter reveal"><span class="chapter-no">01</span><div><p class="eyebrow">Valfenda</p><h3>O menino chamado Esperança</h3><p>Após a morte de Arathorn, Gilraen levou o filho a Valfenda. Ali recebeu o nome Estel, “Esperança”, e cresceu sem saber que era herdeiro dos reis do Norte.</p></div><img src="imagens/valfenda.jpg" alt="Paisagem de Valfenda" loading="lazy"></article>
+        <article class="chapter reveal"><span class="chapter-no">02</span><div><p class="eyebrow">Terras ermas</p><h3>O patrulheiro Passolargo</h3><p>Entre os Guardiões do Norte, Aragorn protegeu povos que quase nunca conheceram seu nome. Para os hobbits de Bri, era apenas o misterioso Passolargo.</p></div><img src="imagens/aragorn-2.jpg" alt="Arte de Aragorn como patrulheiro" loading="lazy"></article>
+        <article class="chapter reveal"><span class="chapter-no">03</span><div><p class="eyebrow">A Sociedade do Anel</p><h3>Uma espada ao lado dos pequenos</h3><p>Guiou Frodo e seus companheiros depois de Bri e tornou-se um dos membros da Sociedade. Após a queda de Gandalf em Moria, coube a ele conduzir o grupo.</p></div><img src="imagens/aragorn-3.jpg" alt="Arte de Aragorn durante a jornada" loading="lazy"></article>
+        <article class="chapter reveal"><span class="chapter-no">04</span><div><p class="eyebrow">A Guerra do Anel</p><h3>O herdeiro se revela</h3><p>Com Andúril reforjada, percorreu os Caminhos dos Mortos, tomou o controle dos navios de Umbar e chegou à batalha dos Campos do Pelennor. Depois marchou ao Portão Negro para dar a Frodo uma última chance.</p></div><img src="imagens/aragorn-4.jpg" alt="Arte de Aragorn em tempos de guerra" loading="lazy"></article>
+        <article class="chapter reveal"><span class="chapter-no">05</span><div><p class="eyebrow">Minas Tirith</p><h3>O retorno do rei</h3><p>Com a derrota de Sauron, Aragorn foi coroado como Elessar. Reuniu os reinos de Gondor e Arnor e iniciou uma era de reconstrução.</p></div><img src="imagens/aragorn-5.jpg" alt="Arte de Aragorn como rei" loading="lazy"></article>
+      </div>
+    </section>
+
+    <section class="legacy" aria-labelledby="linhagem-titulo"><div class="content-width legacy-grid"><div class="reveal"><p class="eyebrow">Uma história anterior a ele</p><h2 id="linhagem-titulo">A linhagem do rei</h2><p>A ascendência de Aragorn liga as grandes histórias da Primeira Era aos reinos dos homens. Beren e Lúthien estão entre seus antepassados; por meio de Elros, a linhagem segue até Númenor. Elendil e seu filho Isildur fundaram os Reinos no Exílio.</p><p>Depois da queda de Arnor, seus descendentes continuaram como chefes dos Dúnedain. Aragorn herdou essa reivindicação e a transformou em responsabilidade vivida.</p></div><ol class="lineage reveal"><li>Beren e Lúthien</li><li>Eärendil e Elwing</li><li>Elros · primeiro rei de Númenor</li><li>Elendil → Isildur</li><li>Chefes dos Dúnedain do Norte</li><li>Arathorn II e Gilraen → Aragorn II</li></ol></div></section>
+
+    <section class="gallery content-width" aria-labelledby="galeria-titulo"><div class="section-heading reveal"><p class="eyebrow">Retratos de uma trajetória</p><h2 id="galeria-titulo">Muitos rostos, um destino</h2><p>Do viajante das estradas ao rei de Gondor.</p></div><div class="gallery-grid"><figure class="reveal"><img src="imagens/aragorn.jpg" alt="Retrato de Aragorn" loading="lazy"><figcaption>O herdeiro</figcaption></figure><figure class="reveal"><img src="imagens/aragorn-2.jpg" alt="Aragorn como patrulheiro" loading="lazy"><figcaption>O patrulheiro</figcaption></figure><figure class="reveal"><img src="imagens/aragorn-5.jpg" alt="Aragorn após sua ascensão" loading="lazy"><figcaption>O rei</figcaption></figure></div></section>
+
+    <section class="arwen content-width reveal"><div class="arwen-image" role="img" aria-label="Arte de Aragorn e Arwen"></div><div><p class="eyebrow">Além da coroa</p><h2>Aragorn e Arwen</h2><p>Seu reencontro, a promessa feita em Cerin Amroth e a escolha de Arwen pela mortalidade acrescentam uma dimensão íntima à história do rei. O destino dos dois também ecoa a antiga união de Beren e Lúthien.</p><a class="button ghost" href="aragorn-arwen.html">Conhecer essa história</a></div></section>
+
+    <section class="closing content-width reveal"><p class="eyebrow">A jornada continua</p><h2>Conheça o mundo que ele ajudou a salvar</h2><div class="next-links"><a href="era-sociedade.html">A Guerra do Anel <span aria-hidden="true">↗</span></a><a href="era-quarta.html">O início da Quarta Era <span aria-hidden="true">↗</span></a><a href="personagens.html">Outros personagens <span aria-hidden="true">↗</span></a></div></section>
   </main>
-
-  <footer>
-    <p>© Página da Terra Média | Criada por  ✨</p>
-  </footer>
-  <script>
-    // Frases épicas rotativas
-const frases = [
- "Sou Aragorn, filho de Arathorn. E se pela vida ou pela morte eu puder protegê-lo, eu o farei.",
-  "Sempre há esperança.",
- "Hoje nós lutamos!"
-];
-
-function mostrarFraseAleatoria() {
-  const fraseEl = document.createElement("p");
-  fraseEl.textContent = frases[Math.floor(Math.random() * frases.length)];
-  fraseEl.style.fontStyle = "italic";
-  fraseEl.style.background = "#cfd8dc";
-  fraseEl.style.borderLeft = "5px solid #455a64";
-  fraseEl.style.padding = "10px";
-  document.body.appendChild(fraseEl);
-}
-
-setTimeout(mostrarFraseAleatoria, 3000);
-
-  </script>
-</body>
-</html>
+  <footer><a href="#topo">↑ Voltar ao início</a><p>Terra Média — uma homenagem ao universo criado por J.R.R. Tolkien.</p></footer>
+</body></html>

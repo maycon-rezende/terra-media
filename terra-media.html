@@ -16,8 +16,8 @@
     .brand { color:var(--gold); font:700 .85rem Cinzel,serif; letter-spacing:.14em; text-decoration:none; }
     .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.4rem 1rem; list-style:none; padding:0; margin:0; }
     .nav-links a { color:#eee5ce; font-size:.84rem; text-decoration:none; } .nav-links a:hover { color:var(--gold); }
-    .sound-toggle { min-height:36px; padding:.35rem .7rem; border:1px solid #e1bd5870; border-radius:999px; background:transparent; color:#f7df92; cursor:pointer; font:600 .68rem Cinzel,serif; letter-spacing:.05em; }
-    .sound-toggle:hover, .sound-toggle[aria-pressed="true"] { background:#e1bd5826; border-color:var(--gold); }
+    .sound-toggle { display:grid; place-items:center; width:30px; min-height:30px; padding:0; border:1px solid #e1bd584d; border-radius:50%; background:#00000030; color:#e1bd58; cursor:pointer; font-size:.9rem; opacity:.72; transition:.2s; }
+    .sound-toggle:hover, .sound-toggle:focus-visible, .sound-toggle[aria-pressed="true"] { opacity:1; background:#e1bd581c; border-color:var(--gold); outline:none; }
     .cursor-glow { position:fixed; z-index:100; width:26px; height:26px; border:1px solid #f7df92aa; border-radius:50%; pointer-events:none; mix-blend-mode:screen; box-shadow:0 0 18px #e1bd58, inset 0 0 8px #e1bd58; transform:translate(-50%,-50%); opacity:0; transition:width .18s ease,height .18s ease,opacity .2s ease; }
     body.cursor-active .cursor-glow { opacity:1; } body.cursor-over-link .cursor-glow { width:42px; height:42px; }
     .hero { min-height:100svh; display:grid; place-items:center; position:relative; overflow:hidden; padding:8rem 1rem 3rem; text-align:center; isolation:isolate; }
@@ -38,7 +38,8 @@
     .path:hover { border-color:var(--gold); transform:translateY(-5px); background:#e1bd5817; } .path strong { color:var(--gold); font:600 1.25rem Cinzel,serif; } .path span { margin-top:.5rem; color:#ccc3ab; }
     .chronicles { border-block:1px solid #e1bd5844; background:linear-gradient(90deg,#1b162a,#101827,#1b162a); }
     .characters { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem; }
-    .character { min-height:220px; display:flex; align-items:end; padding:1rem; border-radius:14px; background:linear-gradient(transparent,#03060c),var(--bg) center/cover; color:#fff; font:600 1.1rem Cinzel,serif; text-decoration:none; }
+    .character { aspect-ratio:4/5; display:flex; align-items:end; padding:1rem; border:1px solid #ffffff25; border-radius:14px; background:linear-gradient(transparent 35%,#03060ce8),var(--bg) center 20%/cover; color:#fff; font:600 1.1rem Cinzel,serif; text-decoration:none; transition:transform .25s,border-color .25s,box-shadow .25s; }
+    .character:hover { border-color:var(--gold); box-shadow:0 12px 26px #0008; transform:translateY(-5px); }
     .closing { text-align:center; padding-bottom:7rem; } .closing p { max-width:42ch; margin:1rem auto 2rem; color:#cdc5b0; line-height:1.7; }
     footer { padding:2rem; border-top:1px solid #ffffff1c; color:#a9a18e; text-align:center; font-size:.9rem; }
     @keyframes float { 50% { transform:translateY(-14px) rotate(2deg); } } @keyframes appear { from { opacity:0; transform:translateY(16px); } } @keyframes prologue { 0% { opacity:0; filter:blur(7px); transform:translateY(18px); } 100% { opacity:1; filter:none; transform:none; } } @keyframes ring-arrive { from { opacity:0; transform:scale(.3); filter:blur(8px); } to { opacity:1; transform:scale(1); filter:none; } } @keyframes title-reveal { from { opacity:0; letter-spacing:.38em; filter:blur(12px); transform:translateY(18px); } to { opacity:1; letter-spacing:.06em; filter:none; transform:none; } } @keyframes pulse { 50% { transform:scale(1.18); opacity:.8; } } @media (prefers-reduced-motion:reduce) { .prologue,.ring,h1,.subtitle,.hero .button { animation:none; opacity:1; } }
@@ -48,7 +49,7 @@
 </head>
 <body>
   <audio id="ambientAudio" autoplay loop preload="auto"><source src="imagens/audio/01 prologo.mp3" type="audio/mpeg"></audio><div class="cursor-glow" aria-hidden="true"></div>
-  <nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">TERRA MÉDIA</a><ul class="nav-links"><li><a href="regioes.html">Regiões</a></li><li><a href="personagens.html">Personagens</a></li><li><a href="eras.html">Eras</a></li><li><a href="fanfic.html">Crônicas</a></li></ul><button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">Ativar som</button></nav>
+  <nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">TERRA MÉDIA</a><ul class="nav-links"><li><a href="regioes.html">Regiões</a></li><li><a href="personagens.html">Personagens</a></li><li><a href="eras.html">Eras</a></li><li><a href="fanfic.html">Crônicas</a></li></ul><button class="sound-toggle" id="soundToggle" type="button" aria-label="Pausar música ambiente" title="Pausar música ambiente" aria-pressed="false">♫</button></nav>
   <header class="hero" id="inicio"><div class="hero-content"><p class="prologue">Anéis foram entregues aos povos livres da Terra Média. Alguns buscaram sabedoria; outros, poder. Mas nas sombras de Mordor, uma vontade maior despertou. <strong>Um único anel foi forjado para dominar todos os demais.</strong></p><div class="ring" aria-label="O Um Anel"></div><h1>TERRA MÉDIA</h1><p class="subtitle">O mundo épico de lendas, coragem e sombras.</p><a class="button" href="#caminhos">Iniciar a jornada</a></div></header>
   <main>
     <section class="section" id="caminhos"><p class="kicker">Escolha seu caminho</p><h2>Uma história em cada horizonte.</h2><p class="lead">Explore os reinos, os grandes nomes e os acontecimentos que moldaram a Terra Média.</p><div class="paths"><a class="path" href="regioes.html"><strong>Regiões</strong><span>Reinos, florestas e terras antigas.</span></a><a class="path" href="personagens.html"><strong>Personagens</strong><span>Heróis, governantes e viajantes.</span></a><a class="path" href="eras.html"><strong>Eras</strong><span>Eventos que atravessam o tempo.</span></a><a class="path" href="magos.html"><strong>Magos</strong><span>Os Istari e seus segredos.</span></a><a class="path" href="dragoes.html"><strong>Dragões</strong><span>O fogo que marcou as eras.</span></a><a class="path" href="viloes.html"><strong>Vilões</strong><span>As forças que vieram das sombras.</span></a></div></section>
@@ -59,13 +60,13 @@
     const audio = document.getElementById('ambientAudio');
     const soundToggle = document.getElementById('soundToggle');
     const setSound = async () => {
-      if (audio.paused) { try { await audio.play(); soundToggle.textContent = 'Pausar som'; soundToggle.setAttribute('aria-pressed', 'true'); } catch { soundToggle.textContent = 'Toque para ativar som'; } }
-      else { audio.pause(); soundToggle.textContent = 'Ativar som'; soundToggle.setAttribute('aria-pressed', 'false'); }
+      if (audio.paused) { try { await audio.play(); soundToggle.setAttribute('aria-pressed', 'true'); soundToggle.setAttribute('aria-label', 'Pausar música ambiente'); soundToggle.title = 'Pausar música ambiente'; } catch { soundToggle.setAttribute('aria-label', 'Ativar música ambiente'); soundToggle.title = 'Ativar música ambiente'; } }
+      else { audio.pause(); soundToggle.setAttribute('aria-pressed', 'false'); soundToggle.setAttribute('aria-label', 'Ativar música ambiente'); soundToggle.title = 'Ativar música ambiente'; }
     };
     soundToggle.addEventListener('click', setSound);
     window.addEventListener('DOMContentLoaded', async () => {
-      try { await audio.play(); soundToggle.textContent = 'Pausar som'; soundToggle.setAttribute('aria-pressed', 'true'); }
-      catch { soundToggle.textContent = 'Ativar som'; }
+      try { await audio.play(); soundToggle.setAttribute('aria-pressed', 'true'); }
+      catch { soundToggle.setAttribute('aria-label', 'Ativar música ambiente'); soundToggle.title = 'Ativar música ambiente'; }
     });
     const cursor = document.querySelector('.cursor-glow');
     if (matchMedia('(pointer:fine)').matches) {

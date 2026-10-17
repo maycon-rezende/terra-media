@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal da Terra Média: lendas, povos e crônicas.">
+  <title>Terra Média | Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <script src="access-guard.js"></script>
+  <link rel="stylesheet" href="responsive.css">
+  <style>
+    :root { --gold:#e1bd58; --ink:#070b12; --paper:#f2e7c8; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; color:#f7efd9; background:radial-gradient(circle at 50% 5%,#26344b 0,#101827 34rem,#070b12 70rem); font-family:Marcellus, Georgia, serif; }
+    .nav { position:fixed; inset:1rem 1rem auto; z-index:10; display:flex; justify-content:space-between; align-items:center; gap:1rem; width:auto; max-width:1100px; margin:auto; padding:.75rem 1rem; border:1px solid #ffffff20; border-radius:999px; background:#070b12c9; backdrop-filter:blur(12px); }
+    .brand { color:var(--gold); font:700 .85rem Cinzel,serif; letter-spacing:.14em; text-decoration:none; }
+    .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.4rem 1rem; list-style:none; padding:0; margin:0; }
+    .nav-links a { color:#eee5ce; font-size:.84rem; text-decoration:none; } .nav-links a:hover { color:var(--gold); }
+    .hero { min-height:100svh; display:grid; place-items:center; position:relative; overflow:hidden; padding:8rem 1rem 3rem; text-align:center; }
+    .hero::before { content:""; position:absolute; inset:0; opacity:.45; background-image:radial-gradient(#fff 0 1px,transparent 1.5px); background-size:90px 90px; mask-image:linear-gradient(#000,transparent 75%); }
+    .hero-content { position:relative; width:min(100%,800px); }
+    .prologue { min-height:7em; margin:0 auto 2.5rem; max-width:48ch; color:#d7d2c3; font-size:clamp(1rem,2.4vw,1.25rem); line-height:1.7; animation:appear 1.5s ease both; }
+    .ring { width:clamp(110px,20vw,160px); aspect-ratio:1; margin:0 auto 1.5rem; border:9px solid var(--gold); border-radius:50%; box-shadow:0 0 20px #ffd65b,0 0 90px #e1bd586e,inset 0 0 25px #e1bd5855; animation:float 4s ease-in-out infinite; }
+    h1 { margin:.2rem 0; color:var(--gold); font:700 clamp(2.7rem,10vw,6rem)/1 Cinzel,serif; letter-spacing:.06em; text-shadow:0 0 32px #e1bd5888; animation:appear 1.3s .4s both; }
+    .subtitle { margin:1rem auto 2rem; color:#d7d2c3; font-size:clamp(1rem,2.4vw,1.25rem); }
+    .button { display:inline-block; padding:.9rem 1.4rem; border:1px solid var(--gold); border-radius:999px; color:#fff4cf; font:600 .85rem Cinzel,serif; letter-spacing:.06em; text-decoration:none; transition:.2s; }
+    .button:hover { color:#101827; background:var(--gold); transform:translateY(-2px); }
+    .section { width:min(100% - 2rem,1100px); margin:auto; padding:6rem 0; }
+    .kicker { margin:0 0 .8rem; color:var(--gold); font:600 .75rem Cinzel,serif; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { margin:0; font:600 clamp(2rem,5vw,3.4rem)/1.1 Cinzel,serif; } .lead { max-width:62ch; color:#cdc5b0; line-height:1.75; }
+    .paths { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem; }
+    .path { min-height:190px; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; border:1px solid #ffffff22; border-radius:16px; color:#fff6dc; background:linear-gradient(160deg,#ffffff12,#0000005c); text-decoration:none; transition:.25s; }
+    .path:hover { border-color:var(--gold); transform:translateY(-5px); background:#e1bd5817; } .path strong { color:var(--gold); font:600 1.25rem Cinzel,serif; } .path span { margin-top:.5rem; color:#ccc3ab; }
+    .chronicles { border-block:1px solid #e1bd5844; background:linear-gradient(90deg,#1b162a,#101827,#1b162a); }
+    .characters { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem; }
+    .character { min-height:220px; display:flex; align-items:end; padding:1rem; border-radius:14px; background:linear-gradient(transparent,#03060c),var(--bg) center/cover; color:#fff; font:600 1.1rem Cinzel,serif; text-decoration:none; }
+    .closing { text-align:center; padding-bottom:7rem; } .closing p { max-width:42ch; margin:1rem auto 2rem; color:#cdc5b0; line-height:1.7; }
+    footer { padding:2rem; border-top:1px solid #ffffff1c; color:#a9a18e; text-align:center; font-size:.9rem; }
+    @keyframes float { 50% { transform:translateY(-14px) rotate(2deg); } } @keyframes appear { from { opacity:0; transform:translateY(16px); } }
+    @media (max-width:700px) { .nav { border-radius:16px; } .nav-links { justify-content:center; } .paths { grid-template-columns:repeat(2,1fr); } .characters { grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">TERRA MÉDIA</a><ul class="nav-links"><li><a href="regioes.html">Regiões</a></li><li><a href="personagens.html">Personagens</a></li><li><a href="eras.html">Eras</a></li><li><a href="fanfic.html">Crônicas</a></li></ul></nav>
+  <header class="hero" id="inicio"><div class="hero-content"><p class="prologue">Anéis foram entregues aos povos livres da Terra Média. Alguns buscaram sabedoria; outros, poder. Mas nas sombras de Mordor, uma vontade maior despertou. <strong>Um único anel foi forjado para dominar todos os demais.</strong></p><div class="ring" aria-label="O Um Anel"></div><h1>TERRA MÉDIA</h1><p class="subtitle">O mundo épico de lendas, coragem e sombras.</p><a class="button" href="#caminhos">Iniciar a jornada</a></div></header>
+  <main>
+    <section class="section" id="caminhos"><p class="kicker">Escolha seu caminho</p><h2>Uma história em cada horizonte.</h2><p class="lead">Explore os reinos, os grandes nomes e os acontecimentos que moldaram a Terra Média.</p><div class="paths"><a class="path" href="regioes.html"><strong>Regiões</strong><span>Reinos, florestas e terras antigas.</span></a><a class="path" href="personagens.html"><strong>Personagens</strong><span>Heróis, governantes e viajantes.</span></a><a class="path" href="eras.html"><strong>Eras</strong><span>Eventos que atravessam o tempo.</span></a><a class="path" href="magos.html"><strong>Magos</strong><span>Os Istari e seus segredos.</span></a><a class="path" href="dragoes.html"><strong>Dragões</strong><span>O fogo que marcou as eras.</span></a><a class="path" href="viloes.html"><strong>Vilões</strong><span>As forças que vieram das sombras.</span></a></div></section>
+    <section class="chronicles"><div class="section"><p class="kicker">Crônicas da Terra Média</p><h2>Histórias além das canções conhecidas.</h2><p class="lead">Conheça as histórias originais inspiradas no universo de Tolkien.</p><div class="characters"><a class="character" href="noada.html" style="--bg:url('imagens/noada-1.jpg')">Noada</a><a class="character" href="eira.html" style="--bg:url('imagens/eira-elenwe.png')">Eira</a><a class="character" href="thalion.html" style="--bg:url('imagens/thalion.png')">Thalion</a><a class="character" href="lyra.html" style="--bg:url('imagens/lyra.png')">Lyra</a></div><p><a class="button" href="fanfic.html">Explorar as Crônicas</a></p></div></section>
+    <section class="section closing"><p class="kicker">A jornada continua</p><h2>Nem todos os que vagueiam estão perdidos.</h2><p>Das colinas do Condado às sombras de Mordor, há sempre uma nova história esperando para ser descoberta.</p><a class="button" href="eras.html">Explorar as Eras</a></section>
+  </main><footer>Terra Média — uma homenagem ao universo criado por J.R.R. Tolkien.</footer>
+</body></html>

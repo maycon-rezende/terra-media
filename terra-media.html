@@ -47,7 +47,7 @@
   </style>
 </head>
 <body>
-  <audio id="ambientAudio" loop preload="auto"><source src="imagens/audio/01 prologo.mp3" type="audio/mpeg"></audio><div class="cursor-glow" aria-hidden="true"></div>
+  <audio id="ambientAudio" autoplay loop preload="auto"><source src="imagens/audio/01 prologo.mp3" type="audio/mpeg"></audio><div class="cursor-glow" aria-hidden="true"></div>
   <nav class="nav" aria-label="Navegação principal"><a class="brand" href="#inicio">TERRA MÉDIA</a><ul class="nav-links"><li><a href="regioes.html">Regiões</a></li><li><a href="personagens.html">Personagens</a></li><li><a href="eras.html">Eras</a></li><li><a href="fanfic.html">Crônicas</a></li></ul><button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">Ativar som</button></nav>
   <header class="hero" id="inicio"><div class="hero-content"><p class="prologue">Anéis foram entregues aos povos livres da Terra Média. Alguns buscaram sabedoria; outros, poder. Mas nas sombras de Mordor, uma vontade maior despertou. <strong>Um único anel foi forjado para dominar todos os demais.</strong></p><div class="ring" aria-label="O Um Anel"></div><h1>TERRA MÉDIA</h1><p class="subtitle">O mundo épico de lendas, coragem e sombras.</p><a class="button" href="#caminhos">Iniciar a jornada</a></div></header>
   <main>
@@ -63,6 +63,10 @@
       else { audio.pause(); soundToggle.textContent = 'Ativar som'; soundToggle.setAttribute('aria-pressed', 'false'); }
     };
     soundToggle.addEventListener('click', setSound);
+    window.addEventListener('DOMContentLoaded', async () => {
+      try { await audio.play(); soundToggle.textContent = 'Pausar som'; soundToggle.setAttribute('aria-pressed', 'true'); }
+      catch { soundToggle.textContent = 'Ativar som'; }
+    });
     const cursor = document.querySelector('.cursor-glow');
     if (matchMedia('(pointer:fine)').matches) {
       document.addEventListener('pointermove', ({ clientX, clientY }) => { cursor.style.left = clientX + 'px'; cursor.style.top = clientY + 'px'; document.body.classList.add('cursor-active'); });
